@@ -1,9 +1,12 @@
-function Footer() {
+import React from "react";
+import "./Footer.css"; // optional CSS file
+
+const Footer = () => {
   return (
-    <footer style={{ padding: "40px", textAlign: "center", opacity: 0.6 }}>
-      © 2026 IT Service Co. All rights reserved.
+    <footer className="footer">
+      <p>© 2026 IT Service Co. All rights reserved.</p>
     </footer>
   );
-}
+};
 
 export default Footer;
