@@ -1,0 +1,74 @@
+/* Navbar container */
+.navbar {
+  background-color: #1e40af; /* Deep blue */
+  color: white;
+  position: fixed;   /* Fixes it to the top */
+  top: 0;            /* Aligns to the very top */
+  left: 0;
+  width: 100%;       /* Full width across screen */
+  z-index: 1000;     /* Keeps it above other content */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Inner container */
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Links */
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-links li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar-links li a:hover {
+  color: #facc15; /* Golden yellow on hover */
+}
+
+/* Mobile menu toggle */
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    background-color: #1e40af;
+    position: absolute;
+    top: 60px; /* dropdown appears below navbar */
+    right: 0;
+    width: 200px;
+    padding: 10px;
+  }
+
+  .navbar-links.open {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
