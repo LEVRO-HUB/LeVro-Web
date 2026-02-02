@@ -1,0 +1,73 @@
+/* Page wrapper */
+.contact-us {
+  width: 100%;
+  min-height: 100vh;
+  background: #f4f6f9;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Top banner centered with reduced side space */
+.top-banner {
+  max-width: 1200px;       /* reduce width */
+  height: 8cm;
+  margin: 0 auto 40px;    /* center horizontally, add bottom space */
+  background-image: url("../assets/images/Banner.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  text-align: center;
+  padding: 30px 20px;
+  border-radius: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.banner-img {
+  max-width: 120px;
+  margin-bottom: 15px;
+  border-radius: 50%;     /* makes image circular */
+}
+
+/* Grid for sections */
+.sections-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 per row */
+  gap: 24px; /* space between each section */
+}
+
+/* Section cards */
+.section {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+/* Individual section colors (optional) */
+.technical-support { background: #e8f4ff; }
+.pricing-support { background: #fff3e6; }
+.product-advice { background: #f0fff4; }
+.general-inquiries { background: #f9f9f9; }
+.feedback { background: #fff0f6; }
+
+/* Links */
+.section a {
+  text-decoration: none;
+  color: #005a9e;
+  font-weight: bold;
+}
+.section a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive: stack on smaller screens */
+@media (max-width: 992px) {
+  .sections-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 per row */
+  }
+}
+@media (max-width: 600px) {
+  .sections-grid {
+    grid-template-columns: 1fr; /* stack vertically */
+  }
+}
