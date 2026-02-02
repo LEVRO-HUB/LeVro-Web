@@ -1,42 +1,64 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* Reset and global defaults */
+html, body, #root, .App {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f4f6f9;
+  color: #333;
+  box-sizing: border-box;
+}
+/* Grid system for reusable layouts */
+.grid {
+  display: grid;
+  gap: 24px;
+}
+.grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+.grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* Banner (can be reused anywhere) */
+.banner {
+  width: 100%;
+  background: #0078d7;
+  color: #fff;
   text-align: center;
+  padding: 40px 20px;
+  border-radius: 8px;
+}
+.banner h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+.banner p {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  opacity: 0.9;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
+/* Card style (for sections like Contact Us, Services, etc.) */
 .card {
-  padding: 2em;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
 }
 
-.read-the-docs {
-  color: #888;
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+  .banner {
+    padding: 20px;
+  }
 }
