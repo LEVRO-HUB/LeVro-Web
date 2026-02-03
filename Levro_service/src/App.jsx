@@ -8,7 +8,11 @@ function App() {
   return (
    <div className="App"> 
    <Navbar />
+<<<<<<< HEAD
+    <ContactUs />
+=======
    <Home/>
+>>>>>>> 275fcc87678f740acde498c7fb5309441afa488f
    <Footer />
    </div>
   );
