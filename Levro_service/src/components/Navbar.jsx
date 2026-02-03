@@ -9,7 +9,11 @@ export default function Navbar() {
     <nav className="navbar">
       <div className="navbar-container">
         {/* Logo */}
+<<<<<<< HEAD
         <div className="navbar-logo">LEVRO</div>
+=======
+        <div className="navbar-logo">LEVRO TECHNOLOGIES</div>
+>>>>>>> 275fcc87678f740acde498c7fb5309441afa488f
 
         {/* Desktop Menu */}
         <ul className={`navbar-links ${isOpen ? "open" : ""}`}>
