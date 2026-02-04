@@ -11,8 +11,9 @@ import img5 from "../assets/images/img12.jfif";
 import gif6 from "../assets/images/gif6.gif";
 import gif7 from "../assets/images/gif8.gif";
 import gif8 from "../assets/images/gif7.gif";
+import { Link } from "react-router-dom";
 
-function Services() {
+function Service() {
   const scrollTo = (id) => {
     document.getElementById(id)?.scrollIntoView({
       behavior: "smooth",
@@ -119,7 +120,7 @@ function Services() {
   return (
     <div className="services-container">
       <section className="services-hero">
-        <h1>Value-Added Services</h1>
+        <h1><button id="heading">VALUE-ADDED SERVICES</button></h1>
 
         <div className="services-pills">
           <button onClick={() => scrollTo("web")}>Web Development</button>
@@ -131,7 +132,7 @@ function Services() {
       </section>
 
     <section id="web" className="service-block">
-      <h2>How does Web Development help your business?</h2>
+      <h2>How does <span className="highlight">Web Development</span> help your business?</h2>
       <p>
         We build high-performance, scalable websites that strengthen your brand presence, attract and retain customers, and support business growth through speed, reliability, and modern design.
       </p>
@@ -147,10 +148,11 @@ function Services() {
         </div>
       </div>
     </section>
-
+ 
       <section id="uiux" className="service-block">
-        <h2>How can UI/UX design boost customer engagement and turn visitors into loyal customers?</h2>
-        <p>By designing intuitive, user-centric, and visually appealing interfaces that make interactions effortless, build trust, and keep users engaged. A well-crafted UI/UX improves usability, enhances brand credibility, and encourages users to return—ultimately fostering long-term customer loyalty.</p>
+        <svg viewBox="0 0 1440 100"><path fill="#f7f7ff" d="M0,40 C240,80 480,0 720,20 960,40 1200,80 1440,40 L1440,0 L0,0 Z" /></svg>
+        <h2>How can <span className="highlight">UI/UX</span> design That Turns Visitors Into Loyal Customers?</h2>
+        <p>We design intuitive, user-centric interfaces that enhance usability, build trust, and keep users engaged—driving long-term loyalty.</p>
         <div className="linear-stack">
           <div className="linear-card">
             <img src={gif6} alt="Preview 1" />
@@ -165,7 +167,8 @@ function Services() {
       </section>
 
       <section id="erp" className="service-block">
-        <h2>How do ERP Solutions streamline your entire business?</h2>
+        <svg viewBox="0 0 1440 100"><path fill="#f7f7ff" d="M0,40 C240,80 480,0 720,20 960,40 1200,80 1440,40 L1440,0 L0,0 Z" /></svg>
+        <h2>How do <span className="highlight">ERP Solutions</span> streamline your entire business?</h2>
         <p>Our ERP solutions unify all your core business processes into a single, integrated system, improving operational efficiency, real-time visibility, and decision-making across departments.</p>
         <Slideshow /> 
       </section>
@@ -197,36 +200,6 @@ function Services() {
         </div>
       </section>
 
-      <section className="why-choose-us">
-        <div className="why-content">
-          <h2>Why businesses choose Levro Technologies</h2>
-          <p className="why-sub">
-            We don’t just build software — we build reliable, scalable solutions
-            that help businesses grow faster and operate smarter.
-          </p>
-          <div className="why-points">
-            <div>
-              <h4>Business-first mindset</h4>
-              <p>Every solution is aligned with real business goals, not just code.</p>
-            </div>
-
-            <div>
-              <h4>Scalable & secure architecture</h4>
-              <p>Built to handle growth, performance, and security from day one.</p>
-            </div>
-
-            <div>
-              <h4>Clean UI & great experience</h4>
-              <p>Designs that users love and teams find easy to maintain.</p>
-            </div>
-
-            <div>
-              <h4>Long-term support</h4>
-              <p>We stay with you beyond launch for updates, scaling, and support.</p>
-            </div>
-          </div>
-        </div>
-      </section>
       <section className="services-cta">
         <h2>Ready to build something impactful?</h2>
         <p>
@@ -235,8 +208,13 @@ function Services() {
         </p>
 
         <div className="cta-buttons">
-          <button className="cta-primary">Get a Free Consultation</button>
-          <button className="cta-secondary">Contact Our Team</button>
+          <Link to="/about" className="cta-primary">
+            Who We Are?
+          </Link>
+
+          <Link to="/contact" className="cta-secondary">
+            Contact Our Team
+          </Link>
         </div>
       </section>
       <section className="services-faq">
@@ -280,4 +258,4 @@ function Services() {
   );
 }
 
-export default Services;
+export default Service;
