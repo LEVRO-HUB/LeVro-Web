@@ -1,6 +1,10 @@
 import React from "react";
 import "./ContactUs.css";
 import bannerImg from "../assets/images/Banner.jpg"; // Ensure you have an image at this path
+import Accordion from "../components/Accordion";
+import linkedin from "../assets/images/linkedin.png";
+import twitter from "../assets/images/twitter.png";
+import facebook from "../assets/images/facebook.png";
 
 const ContactUs = () => {
   return (
@@ -8,9 +12,17 @@ const ContactUs = () => {
 
       {/* Top Banner */}
       <div className="top-banner">
-        {/* <img src={bannerImg} alt="Startup Logo" className="banner-img" /> */}
-        <h1>Contact Our Startup</h1>
-        <p>We’re here to help with support, pricing, and more.</p>
+        <div className="top-left">
+        <img src={bannerImg} alt="Startup Logo" className="banner-img" />
+        </div>
+        <div className="top-right">
+          <h1>Get in Touch</h1>
+          <p>
+            Thanks for your interest in Levro. Choose from the options below and
+            we’ll connect you with the right person.
+          </p>
+          <button className="banner-btn">Send a Message</button>
+      </div>
       </div>
 
       {/* Company Information */}
@@ -27,7 +39,7 @@ const ContactUs = () => {
       </div>
 
       {/* Sections Grid */}
-      <div className="sections-grid">
+      {/* <div className="sections-grid">
         <div className="section technical-support">
           <h2>Technical Support</h2>
           <p>Already using our products and experiencing technical issues?</p>
@@ -71,10 +83,74 @@ const ContactUs = () => {
             <li><a href="#">Submit feedback →</a></li>
           </ul>
         </div>
-      </div>
+      </div> */}
 
       {/* Contact Methods */}
+      <Accordion />
+      <form className="contact-form">
+  <h2>How can we help you?</h2>
+
+  <div className="form-row">
+    <input type="text" placeholder="First Name" required />
+    </div>
+     <div className="form-row">
+    <input type="text" placeholder="Last Name" required />
+  </div>
+
+  <div className="form-row">
+    <input type="email" placeholder="Work Email" required />
+    </div>
+    <div className="form-row">
+    <input type="text" placeholder="Job Title" />
+  </div>
+
+  <div className="form-row">
+    <input type="text" placeholder="Company" />
+    <select required>
+      <option value="">Select Country</option>
+      <option value="IN">India</option>
+      <option value="US">United States</option>
+      <option value="UK">United Kingdom</option>
+      <option value="CA">Canada</option>
+      {/* <!-- add more countries --> */}
+    </select>
+  </div>
+
+  <textarea placeholder="Message" rows="5"></textarea>
+
+  <div className="form-check">
+    <label>
+      <input type="checkbox" required /> I confirm, I have read and agree to the Privacy Policy.
+    </label>
+  </div>
+
+  <div className="form-check">
+    <label>
+      <input type="checkbox" /> I would like to receive alerts and updates.
+    </label>
+  </div>
+
+  <button type="submit" className="submit-btn">Submit</button>
+</form>
+
       <div className="contact-methods">
+  {/* Icons row */}
+  <div className="contact-icons">
+    {/* First icon */}
+    <a href="https://www.linkedin.com/company/levro" target="_blank" rel="noopener noreferrer">
+      <img src={linkedin} alt="LinkedIn" className="contact-icon" />
+    </a>
+
+    {/* Second icon */}
+    <a href="https://twitter.com/levro" target="_blank" rel="noopener noreferrer">
+      <img src={twitter} alt="Twitter" className="contact-icon" />
+    </a>
+
+    {/* Third icon */}
+    <a href="https://facebook.com/levro" target="_blank" rel="noopener noreferrer">
+      <img src={facebook} alt="Facebook" className="contact-icon" />
+    </a>
+  </div>
         <h2>Reach Us Directly</h2>
         <p>
           Email:{" "}
@@ -87,7 +163,7 @@ const ContactUs = () => {
       {/* Contact Form + Options side by side */}
       <div className="contact-layout">
         {/* Left: Form */}
-        <div className="contact-form-container">
+        {/* <div className="contact-form-container">
           <h2>Get in Touch with Our Sales Team</h2>
           <form className="contact-form">
             <div className="form-row">
@@ -120,7 +196,7 @@ const ContactUs = () => {
 
             <button type="submit" className="submit-btn">Submit</button>
           </form>
-        </div>
+        </div> */}
 
         {/* Right: Contact Options
         <div className="contact-options">
