@@ -14,6 +14,7 @@ const AccordionItem = ({ number, title, content }) => {
       {isOpen && (
         <div className="accordion-content">
           <p>{content}</p>
+          <button className="accordion-btn">Learn More</button>
         </div>
       )}
     </div>
