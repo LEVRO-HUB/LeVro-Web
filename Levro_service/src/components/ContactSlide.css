@@ -1,0 +1,44 @@
+.contact-slide {
+  max-width: 600px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.slide-wrapper {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.slide-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+
+  /* right-to-left + pop effect */
+  animation: slidePopIn 0.7s ease forwards;
+}
+
+.slide-paragraph {
+  margin-top: 15px;
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Keyframes: slide in from right, scale up, shadow grows */
+@keyframes slidePopIn {
+  from {
+    transform: translateX(100%) scale(0.9);
+    opacity: 0;
+    box-shadow: 0 0 0 rgba(0,0,0,0);
+  }
+  to {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+  }
+}
