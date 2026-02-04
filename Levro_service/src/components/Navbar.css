@@ -1,21 +1,33 @@
 /* Navbar wrapper */
 .navbar {
-  position: fixed;       /* stays at top */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background: #004080;  
+  background: #004080;
   color: #fff;
   z-index: 1000;
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
-/* Container for logo + links */
+/* Container with three zones */
 .navbar-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 30px;
+  flex-wrap: wrap; /* allows wrapping on small screens */
+}
+
+/* Left zone */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar-icon {
+  font-size: 1.5rem;
 }
 
 /* Logo */
@@ -24,7 +36,7 @@
   font-weight: bold;
 }
 
-/* Links (desktop default) */
+/* Center links */
 .navbar-links {
   list-style: none;
   display: flex;
@@ -37,15 +49,39 @@
   color: #fff;
   text-decoration: none;
   font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: background 0.3s ease;
 }
 
 .navbar-links li a:hover {
-  text-decoration: underline;
+  background: #0078d7;
+}
+
+/* Right zone */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.lang-btn {
+  background: #0078d7;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.lang-btn:hover {
+  background: #005fa3;
 }
 
 /* Mobile toggle button */
 .menu-toggle {
-  display: none; /* hidden on desktop */
+  display: none;
   font-size: 1.5rem;
   cursor: pointer;
 }
@@ -54,20 +90,25 @@
 @media (max-width: 768px) {
   .navbar-links {
     position: absolute;
-    top: 60px; /* below navbar */
+    top: 60px;
+    left: 0;
     right: 0;
     background: #004080;
     flex-direction: column;
-    width: 200px;
+    width: 100%;
     padding: 20px;
-    display: none; /* hidden by default */
+    display: none;
   }
 
   .navbar-links.open {
-    display: flex; /* show when isOpen = true */
+    display: flex;
   }
 
   .menu-toggle {
-    display: block; /* show toggle on mobile */
+    display: block;
+  }
+
+  .navbar-container {
+    flex-wrap: nowrap;
   }
 }

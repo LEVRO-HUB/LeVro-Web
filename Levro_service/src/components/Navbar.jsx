@@ -1,6 +1,6 @@
-// src/components/Navbar.jsx
+import { Link } from "react-router-dom";
 import React, { useState } from "react";
-import "./Navbar.css"; // Import the CSS file
+import "./Navbar.css";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,25 +8,29 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        {/* Logo */}
-<<<<<<< HEAD
-        <div className="navbar-logo">LEVRO</div>
-=======
-        <div className="navbar-logo">LEVRO TECHNOLOGIES</div>
->>>>>>> 275fcc87678f740acde498c7fb5309441afa488f
+        
+        {/* Left: Logo + Icon */}
+        <div className="navbar-left">
+          <span className="navbar-icon"></span>
+          <div className="navbar-logo">LEVRO TECHNOLOGIES</div>
+        </div>
 
-        {/* Desktop Menu */}
+        {/* Center: Links */}
         <ul className={`navbar-links ${isOpen ? "open" : ""}`}>
-          <li><a href="/">Home</a></li>
-          <li><a href="/services">Services</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/contact">Contact</a></li>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/services">Services</Link></li>
+          <li><Link to="/contact">Contact Us</Link></li>
+           <li><Link to="/careers">Careers</Link></li>
+           <li><Link to="/about">About Us</Link></li>
         </ul>
 
-        {/* Mobile Menu Button */}
-        <div className="menu-toggle" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? "✖" : "☰"}
-        </div>
+        {/* Right: Language Button */}
+        {/* <div className="navbar-right">
+          <button className="lang-btn">EN | தமிழ்</button>
+          <div className="menu-toggle" onClick={() => setIsOpen(!isOpen)}>
+            {isOpen ? "✖" : "☰"}
+          </div>
+        </div> */}
       </div>
     </nav>
   );
