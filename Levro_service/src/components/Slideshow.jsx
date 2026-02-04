@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import img1 from "../assets/images/slide1.png";
-import img2 from "../assets/images/slide2.webp";
-import img3 from "../assets/images/slide3.webp";
+import img1 from "../assets/images/slide1.jpeg";
+import img2 from "../assets/images/slide2.jpeg";
+import img3 from "../assets/images/slide3.jpeg";
 import "./Slideshow.css";
 
 const images = [img1, img2, img3];
