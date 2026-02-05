@@ -36,6 +36,9 @@
 }
 
 .services-pills button {
+  position: relative;
+  overflow: hidden;
+  
   background: #ffffff;
   color: #0b2a3a; 
   font-weight: 700;
@@ -46,19 +49,52 @@
   cursor: pointer;
 
   box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    color 0.25s ease;
+}
+
+.services-pills button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 120%;
+  height: 100%;
+
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 120, 0, 0.7),
+    rgba(255, 60, 0, 0.9),
+    transparent
+  );
+
+  transform: skewX(-20deg);
+  transition: left 0.6s ease;
+}
+
+
+.services-pills button:hover::before {
+  left: 120%;
 }
 
 .services-pills button:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+  box-shadow: 0 16px 40px rgba(255, 120, 0, 0.35);
+  color: #ff6a00;
 }
 
+
 .services-pills button.active {
-  background: linear-gradient(135deg, #ff8a00, #ff6a00);
+  background: linear-gradient(135deg, #ff8a00, #ff3d00);
   color: #ffffff;
   border: none;
-  box-shadow: 0 16px 40px rgba(255, 138, 0, 0.35);
+
+  box-shadow:
+    0 0 20px rgba(255, 120, 0, 0.6),
+    0 0 40px rgba(255, 60, 0, 0.4);
 }
 
 
@@ -82,6 +118,9 @@
 .service-block .highlight{
   font-weight: bold;
   color: rgb(0, 162, 255);
+
+  text-shadow:
+    0 2px 6px rgba(77, 163, 255, 0.4);
 }
 
 .linear-stack {
@@ -193,6 +232,19 @@
   letter-spacing: -0.02em;
 }
 
+.services-cta .highlight {
+  color: #ff8a00;
+  background: linear-gradient(135deg, #ff8a00, #ff6a00);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 900;
+
+  text-shadow:
+    0 0 10px rgba(255,138,0,0.4),
+    0 0 20px rgba(255,106,0,0.25);
+}
+
 .services-cta p {
   max-width: 680px;
   margin: 0 auto 48px;
@@ -253,8 +305,14 @@
 
 .services-faq h2 {
   text-align: center;
-  font-size: 2.6rem;
+  font-size: 2.8rem;
+  font-weight: bolder;
   margin-bottom: 60px;
+}
+
+.services-faq .highlight{
+  color: rgb(0, 162, 255);
+  text-shadow: 0 2px 6px rgba(77, 163, 255, 0.4);
 }
 
 .faq-list {
@@ -268,11 +326,30 @@
   background: #f7f9fb;
 
   box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
 }
+
+.faq-item:hover {
+  transform: translateY(-12px);
+
+  box-shadow:
+    0 25px 50px rgba(0,0,0,0.12),
+    0 0 20px rgba(53, 134, 255, 0.35),
+    0 0 40px rgba(53, 134, 255, 0.2);
+}
+
 
 .faq-item h4 {
   font-size: 1.2rem;
   margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.faq-item:hover h4 {
+  color: #3586ff;
 }
 
 .faq-item p {
@@ -308,4 +385,11 @@
   .why-points {
     grid-template-columns: 1fr;
   }
+
+  .faq-item:active {
+  transform: translateY(-8px);
+  box-shadow:
+    0 20px 40px rgba(53, 134, 255, 0.35);
+}
+
 }
