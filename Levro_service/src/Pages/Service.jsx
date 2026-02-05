@@ -201,7 +201,7 @@ function Service() {
       </section>
 
       <section className="services-cta">
-        <h2>Ready to build something impactful?</h2>
+        <h2>Ready to build <span className="highlight">something</span> impactful?</h2>
         <p>
           Let’s turn your ideas into scalable, high-performance digital solutions.
           Talk to us and take the next step for your business.
@@ -218,38 +218,34 @@ function Service() {
         </div>
       </section>
       <section className="services-faq">
-        <h2>Frequently Asked Questions</h2>
+        <h2>Frequently <span className="highlight">Asked Questions</span>!</h2>
 
         <div className="faq-list">
           <div className="faq-item">
             <h4>How long does it take to build a project?</h4>
             <p>
-              Timelines depend on complexity, but most projects are delivered within
-              4–8 weeks with clear milestones and regular updates.
+              Timelines depend on the project scope, but most projects are completed within 4-8 weeks, with regular updates along the way.
             </p>
           </div>
 
           <div className="faq-item">
             <h4>Do you provide post-launch support?</h4>
             <p>
-              Yes. We offer long-term support, maintenance, and scaling assistance
-              after launch to ensure smooth operations.
+              Yes. We provide ongoing support, maintenance, and scaling after launch to keep everything running smoothly.
             </p>
           </div>
 
           <div className="faq-item">
             <h4>Can you work with existing systems?</h4>
             <p>
-              Absolutely. We integrate seamlessly with your current tools, platforms,
-              and workflows without disrupting your operations.
+              Absolutely. We integrate with your existing tools and systems without disrupting your workflow.
             </p>
           </div>
 
           <div className="faq-item">
             <h4>Is my data secure?</h4>
             <p>
-              Security is a priority. We follow industry-standard practices for data
-              protection, authentication, and infrastructure security.
+              Yes. Data security is a priority, and we follow industry-standard practices to protect your information.
             </p>
           </div>
         </div>
