@@ -13,8 +13,8 @@ export default function InfoSection() {
           <img src={visitIcon} alt="Visit Us" />
         </div>
         <h3>VISIT US</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel elit euismod arcu non rutrum.</p>
-        <p>2 Elizabeth St. London, UK</p>
+        <p>Vengaivasal Main Road, Valli Nagar, Gowriwakkam, Sembakkam, Chennai, Tamil Nadu 600073</p>
+        <p>Tamilnadu ,IND</p>
       </div>
 
       <div className="info-card">
@@ -22,8 +22,8 @@ export default function InfoSection() {
           <img src={callIcon} alt="Call Us" />
         </div>
         <h3>CALL US</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel elit euismod arcu non rutrum.</p>
-        <p>+44 (0) 203 116 7711</p>
+        <p>Building technology that connects people, drives progress, and shapes the future.</p>
+        <p>+91 7530094591</p>
       </div>
 
       <div className="info-card">
@@ -31,8 +31,8 @@ export default function InfoSection() {
           <img src={emailIcon} alt="Email Us" />
         </div>
         <h3>EMAIL US</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel elit euismod arcu non rutrum.</p>
-        <p>noreply@noland.com</p>
+        <p>For any queries or support, please reach out to us at noreply@levro.com</p>
+        <p>noreply@levro.com</p>
       </div>
     </div>
   );

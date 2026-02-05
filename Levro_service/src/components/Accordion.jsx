@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import "./Accordion.css";
 
@@ -14,7 +15,8 @@ const AccordionItem = ({ number, title, content }) => {
       {isOpen && (
         <div className="accordion-content">
           <p>{content}</p>
-          <button className="accordion-btn">Learn More</button>
+          {/* Button that scrolls to your form */}
+          <Link to="#contact-form" className="accordion-btn">Get in Touch</Link>
         </div>
       )}
     </div>

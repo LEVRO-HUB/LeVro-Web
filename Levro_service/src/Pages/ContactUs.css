@@ -19,12 +19,8 @@
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 
-  /* Parallax background */
-  /* background-image: url("../assets/Images/topbanner.png");
-  /* background-attachment: fixed;   key for parallax */
-  /* background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;  */
+  /* Sky blue background with reduced opacity */
+  background-color: rgba(135, 206, 235, 0.6); /* skyblue with 60% opacity */
 }
 
 
@@ -47,8 +43,10 @@
   box-shadow: 0 12px 28px rgba(0,0,0,0.4);
 }
 
-.top-right {
-  flex: 1;
+.top-right { 
+  flex: 1; display: flex; 
+  flex-direction: column; 
+  justify-content: space-between; /* pushes button to bottom */ 
 }
 
 .top-right h1 {
@@ -65,6 +63,7 @@
 }
 
 .banner-btn {
+  margin-top: 30px; /* pushes it further down */
   background: #fff;
   color: rgb(0, 162, 255); /* bright blue */
   font-size: 1.2rem;
@@ -75,6 +74,7 @@
   cursor: pointer;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   transition: all 0.3s ease;
+  align-self: flex-start;
 }
 
 .banner-btn:hover {

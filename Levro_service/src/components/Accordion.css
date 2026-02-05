@@ -79,3 +79,20 @@
   from { opacity: 0; transform: translateY(10px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+.accordion-btn {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background: #3586ff;
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+  display: inline-block;
+}
+
+.accordion-btn:hover {
+  background: #6dc2e9;
+  color: #000;
+}
