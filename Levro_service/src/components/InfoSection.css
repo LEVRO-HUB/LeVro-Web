@@ -1,0 +1,74 @@
+.info-section {
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+  padding: 60px 20px;
+  flex-wrap: wrap;
+  /* background: linear-gradient(120deg, #f0f9ff, #ffffff); */
+}
+
+/* Card base */
+.info-card {
+  flex: 1;
+  max-width: 300px;
+  /* background: #fff; */
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: fadeInUp 0.8s ease forwards;
+  opacity: 0;
+}
+
+/* Staggered entrance */
+.info-card:nth-child(1) { animation-delay: 0.2s; }
+.info-card:nth-child(2) { animation-delay: 0.4s; }
+.info-card:nth-child(3) { animation-delay: 0.6s; }
+
+/* Hover effect */
+.info-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(0,162,255,0.25);
+}
+
+/* Icon styling (static, no animation) */
+.info-icon {
+  font-size: 2.5rem;
+  color: rgb(0,162,255);
+  margin-bottom: 15px;
+  display: flex; justify-content: center; /* centers horizontally */ 
+  align-items: center; /* centers vertically if needed */ 
+  margin-bottom: 15px;
+}
+
+/* Headings */
+.info-card h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: rgb(0,162,255);
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+/* .info-card:hover h3 {
+  color: #ff6600;
+} */
+
+/* Paragraphs */
+.info-card p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Keyframes */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.info-icon img { width: 70px; /* reduced size */ 
+    height: 70px;
+    object-fit: contain;
+    display: block; /* prevents inline spacing issues */
+ }
