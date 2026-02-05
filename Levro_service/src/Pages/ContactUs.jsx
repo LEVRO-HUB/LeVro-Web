@@ -18,13 +18,21 @@ const ContactUs = () => {
           <img src={bannerImg} alt="Startup Logo" className="banner-img" />
         </div>
         <div className="top-right">
-          <h1>Get in Touch</h1>
-          <p>
-            Thanks for your interest in Levro. Choose from the options below and
-            we’ll connect you with the right person.
-          </p>
-          <button className="banner-btn">Send a Message</button>
-        </div>
+  <h1>Get in Touch</h1>
+  <p>
+    Thanks for your interest in Levro. Choose from the options below and
+    we’ll connect you with the right person.
+  </p>
+  <a
+    href="https://wa.me/7530094591?text=Hello%20Levro%20Team%2C%20I%20would%20like%20to%20get%20in%20touch."
+    target="_blank"
+    rel="noopener noreferrer"
+    className="banner-btn"
+  >
+    Send a Message
+  </a>
+</div>
+
       </div>
 
       {/* Company Information */}
