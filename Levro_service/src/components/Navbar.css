@@ -1,23 +1,33 @@
-/* Navbar container */
+/* Navbar wrapper */
 .navbar {
-  background-color: #1e40af; /* Deep blue */
-  color: white;
-  position: fixed;   /* Fixes it to the top */
-  top: 0;            /* Aligns to the very top */
+  position: fixed;
+  top: 0;
   left: 0;
-  width: 100%;       /* Full width across screen */
-  z-index: 1000;     /* Keeps it above other content */
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  width: 100%;
+  background: #3586ff;
+  color: #fff;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
-/* Inner container */
+/* Container with three zones */
 .navbar-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 12px 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 15px 30px;
+  flex-wrap: wrap; /* allows wrapping on small screens */
+}
+
+/* Left zone */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar-icon {
+  font-size: 1.5rem;
 }
 
 /* Logo */
@@ -26,25 +36,50 @@
   font-weight: bold;
 }
 
-/* Links */
+/* Center links */
 .navbar-links {
   list-style: none;
   display: flex;
   gap: 20px;
+  margin: 0;
+  padding: 0;
 }
 
 .navbar-links li a {
+  color: #fff;
   text-decoration: none;
-  color: white;
   font-weight: 500;
-  transition: color 0.3s ease;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: background 0.3s ease;
 }
 
 .navbar-links li a:hover {
-  color: #facc15; /* Golden yellow on hover */
+  background: #0078d7;
 }
 
-/* Mobile menu toggle */
+/* Right zone */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.lang-btn {
+  background: #0078d7;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.lang-btn:hover {
+  background: #005fa3;
+}
+
+/* Mobile toggle button */
 .menu-toggle {
   display: none;
   font-size: 1.5rem;
@@ -54,14 +89,15 @@
 /* Responsive styles */
 @media (max-width: 768px) {
   .navbar-links {
-    display: none;
-    flex-direction: column;
-    background-color: #1e40af;
     position: absolute;
-    top: 60px; /* dropdown appears below navbar */
+    top: 60px;
+    left: 0;
     right: 0;
-    width: 200px;
-    padding: 10px;
+    background: #004080;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+    display: none;
   }
 
   .navbar-links.open {
@@ -70,5 +106,9 @@
 
   .menu-toggle {
     display: block;
+  }
+
+  .navbar-container {
+    flex-wrap: nowrap;
   }
 }
