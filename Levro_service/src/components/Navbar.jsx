@@ -1,36 +1,35 @@
-import { Link } from "react-router-dom";
-import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import React from "react";
 import "./Navbar.css";
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
   return (
     <nav className="navbar">
-      <div className="navbar-container">
+      <div className="navbar-pill">
         
-        {/* Left: Logo + Icon */}
-        <div className="navbar-left">
-          <span className="navbar-icon"></span>
-          <div className="navbar-logo">LEVRO TECHNOLOGIES</div>
-        </div>
-
-        {/* Center: Links */}
-        <ul className={`navbar-links ${isOpen ? "open" : ""}`}>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/services">Services</Link></li>
-          <li><Link to="/contact">Contact Us</Link></li>
-           <li><Link to="/careers">Careers</Link></li>
-           <li><Link to="/about">About Us</Link></li>
+        {/* Left: Links */}
+        <div className="navbar-logo">LEVRO</div>
+        
+        <ul className="navbar-links">
+          <li>
+            <Link className={location.pathname === "/" ? "active" : ""} to="/">Home</Link>
+          </li>
+          <li>
+            <Link className={location.pathname === "/services" ? "active" : ""} to="/services">Services</Link>
+          </li>
+          <li>
+            <Link className={location.pathname === "/contact" ? "active" : ""} to="/contact">Contact</Link>
+          </li>
+          <li>
+            <Link className={location.pathname === "/career" ? "active" : ""} to="/career">Careers</Link>
+          </li>
+          <li>
+            <Link className={location.pathname === "/about" ? "active" : ""} to="/about">About us</Link>
+          </li>
         </ul>
-
-        {/* Right: Language Button */}
-        {/* <div className="navbar-right">
-          <button className="lang-btn">EN | தமிழ்</button>
-          <div className="menu-toggle" onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? "✖" : "☰"}
-          </div>
-        </div> */}
+      
       </div>
     </nav>
   );
