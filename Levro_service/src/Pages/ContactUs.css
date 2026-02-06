@@ -10,12 +10,12 @@
 
 /* Top banner */
 .top-banner {
-  min-height: 600px;
+  min-height: 500px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 40px;
-  background: url("../assets/Images/topbanner.jpg") center / cover no-repeat;
+  background: url("../assets/Images/contac.jpg") center / cover no-repeat;
   padding: 40px;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -48,17 +48,81 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;      /* vertical center */
-  align-items: center;      /* left align content */
-  padding: 20 60px;              /* left & right padding */
+  justify-content: center;
+  align-items: center;
+  padding: 20px 60px;
 }
 
-/* Heading */
-.top-right h1 {
+/* Heading setup */
+.animated-heading {
   font-size: 4.5rem;
-  font-weight: 500;
-  margin-bottom: 15px;
+  font-weight: 700;
   color: rgb(0, 162, 255);
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+/* spacing between words */
+.animated-heading .word {
+  margin: 0 15px; /* adds space between Get / In / Touch */
+}
+
+/* underline */
+.animated-heading::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 0%;
+  height: 3px;
+  background: rgb(0, 162, 255);
+  animation: underlineGrow 1.2s ease forwards;
+  transition: width 0.5s ease;
+}
+
+/* hover underline effect */
+.animated-heading:hover::after {
+  width: 30%;
+}
+
+/* letter animation */
+.animated-heading .letter {
+  display: inline-block;
+  transform: translateY(-100%);
+  opacity: 0;
+  animation: dropIn 0.6s ease forwards;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.3); /* shadow effect */
+}
+
+/* stagger animation */
+.animated-heading .letter:nth-child(1) { animation-delay: 0.1s; }
+.animated-heading .letter:nth-child(2) { animation-delay: 0.2s; }
+.animated-heading .letter:nth-child(3) { animation-delay: 0.3s; }
+.animated-heading .letter:nth-child(4) { animation-delay: 0.4s; }
+.animated-heading .letter:nth-child(5) { animation-delay: 0.5s; }
+.animated-heading .letter:nth-child(6) { animation-delay: 0.6s; }
+.animated-heading .letter:nth-child(7) { animation-delay: 0.7s; }
+.animated-heading .letter:nth-child(8) { animation-delay: 0.8s; }
+.animated-heading .letter:nth-child(9) { animation-delay: 0.9s; }
+.animated-heading .letter:nth-child(10) { animation-delay: 1s; }
+.animated-heading .letter:nth-child(11) { animation-delay: 1.1s; }
+
+/* keyframes */
+@keyframes dropIn {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes underlineGrow {
+  from { width: 20%; }
+  to { width: 100%; }
 }
 
 /* Paragraph */
@@ -70,9 +134,9 @@
 }
 
 .banner-btn {
-  margin-top: 60px; /* pushes it further down */
+  margin-top: 60px;
   background: #fff;
-  color: rgb(0, 162, 255); /* bright blue */
+  color: rgb(0, 162, 255);
   font-size: 1.2rem;
   font-weight: 600;
   padding: 14px 28px;
@@ -80,15 +144,22 @@
   border-radius: 30px;
   cursor: pointer;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  transition: all 0.3s ease;
-  /* align-self: flex-start; */
-  align-items: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
 }
 
+/* hover effect: slide from right to left */
 .banner-btn:hover {
-  background: #f0f0f0;
+  transform: translateX(-10px); /* moves left */
   box-shadow: 0 6px 16px rgba(0,0,0,0.25);
-  transform: scale(1.1) translateY(20px);
+}
+.banner-btn {
+  animation: slideIn 0.6s ease forwards;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
 }
 
 /* Responsive */
@@ -140,7 +211,7 @@
 }
 
 .company-info p {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   line-height: 1.8;
   color: #333;
 }
@@ -203,7 +274,7 @@
 .contact-form {
   max-width: 700px;
   margin: 0 auto;
-  padding: 40px;
+  padding: 10px;
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.1);
   text-align: center;
@@ -258,4 +329,56 @@
 .submit-btn:hover {
   background: #5a0cad;
   transform: scale(1.05);
+}
+.cta-section {
+  text-align: center;
+  margin-top: 80px;
+}
+
+.cta-text {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* base button style */
+.btn {
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 14px 28px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* filled button */
+.btn-primary {
+  background: #ff7a00; /* orange */
+  color: #fff;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.btn-primary:hover {
+  background: #e56a00;
+  transform: translateX(-5px);
+}
+
+/* outlined button */
+.btn-outline {
+  background: transparent;
+  color: #003366; /* dark blue */
+  border: 2px solid #003366;
+}
+
+.btn-outline:hover {
+  background: #003366;
+  color: #fff;
+  transform: translateX(-5px);
 }

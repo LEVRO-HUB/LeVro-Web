@@ -15,8 +15,9 @@ const AccordionItem = ({ number, title, content }) => {
       {isOpen && (
         <div className="accordion-content">
           <p>{content}</p>
-          {/* Button that scrolls to your form */}
-          <Link to="#contact-form" className="accordion-btn">Get in Touch</Link>
+          <Link to="#contact-form" className="accordion-btn">
+            Get in Touch
+          </Link>
         </div>
       )}
     </div>
@@ -26,6 +27,11 @@ const AccordionItem = ({ number, title, content }) => {
 export default function Accordion() {
   return (
     <div className="accordion">
+      {/* Section Title */}
+      <h2 className="accordion-title-main">
+        Frequently <span className="highlight">Asked</span> Questions
+      </h2>
+
       <AccordionItem
         number="01"
         title="New business requests"
