@@ -17,12 +17,24 @@ const ContactUs = () => {
         {/* <div className="top-left">
           <img src={bannerImg} alt="Startup Logo" className="banner-img" />
         </div> */}
-        <div className="top-right">
-  <h1>Get in Touch</h1>
-  <p>
-    Thanks for your interest in Levro. Choose from the options below and
-    we’ll connect you with the right person.
-  </p>
+        {/* <div className="top-right">
+  <h1 className="animated-heading">Get in Touch</h1> 
+  <a href="https://wa.me/7530094591?text=Hello%20Levro%20Team%2C%20I%20would%20like%20to%20get%20in%20touch." 
+  target="_blank" 
+  rel="noopener noreferrer" 
+  className="banner-btn" > Send a Message 
+  </a>
+</div> */}
+<div className="top-right">
+  <h1 className="animated-heading">
+    {"Get In Touch".split(" ").map((word, i) => (
+      <span key={i} className="word">
+        {word.split("").map((char, j) => (
+          <span key={j} className="letter">{char}</span>
+        ))}
+      </span>
+    ))}
+  </h1>
   <a
     href="https://wa.me/7530094591?text=Hello%20Levro%20Team%2C%20I%20would%20like%20to%20get%20in%20touch."
     target="_blank"
@@ -32,6 +44,7 @@ const ContactUs = () => {
     Send a Message
   </a>
 </div>
+
 
       </div>
 
