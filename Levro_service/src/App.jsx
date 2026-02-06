@@ -6,6 +6,9 @@ import Footer from './components/Footer';
 import Home from './Pages/Home';
 import Service from './Pages/Service';
 
+
+import AboutUs from './Pages/Aboutus';
+
 function App() {
   return ( 
    // 
