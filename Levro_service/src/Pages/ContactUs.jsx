@@ -14,9 +14,9 @@ const ContactUs = () => {
 
       {/* Top Banner */}
       <div className="top-banner">
-        <div className="top-left">
+        {/* <div className="top-left">
           <img src={bannerImg} alt="Startup Logo" className="banner-img" />
-        </div>
+        </div> */}
         <div className="top-right">
   <h1>Get in Touch</h1>
   <p>
