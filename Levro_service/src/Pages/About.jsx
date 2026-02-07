@@ -1,9 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import "./About.css";
+import { Link } from "react-router-dom";
 
 import hero1 from "../assets/images/hero1.avif";
 import hero2 from "../assets/images/hero2.avif";
 import hero3 from "../assets/images/hero3.avif";
+import tharun from "../assets/images/tharun.jpeg";
+import sepal from "../assets/images/sepal.jpeg";
+import prem from "../assets/images/prem.jpeg";
 
 import about1 from "../assets/images/about1.avif";
 import about2 from "../assets/images/about2.avif";
@@ -13,7 +17,14 @@ import about4 from "../assets/images/about4.avif";
 import story1 from "../assets/images/story1.avif";
 import story2 from "../assets/images/story2.avif";
 import story3 from "../assets/images/story3.avif";
-import story4 from "../assets/images/story4.avif";
+import user from "../assets/images/Usericon.svg"; 
+import top from "../assets/images/topicon.svg"; 
+import clock from "../assets/images/clockicon.svg"; 
+import right from "../assets/images/righticon.svg"; 
+import office from "../assets/images/officeicon.svg"; 
+import smile from "../assets/images/smileicon.svg"; 
+
+
 
 export default function About() {
 
@@ -21,11 +32,6 @@ export default function About() {
   const STORY_CONTENT = [
     {
       quote: "We don’t just ship features — we build clarity. Every pixel and every line of code is made to earn trust.",
-      body: [
-        "Levro started from a problem we experienced ourselves—good ideas slowed down by complex tools, unclear processes, and systems that were hard to maintain.",
-        "That led us to build Levro differently. We keep technology simple, practical, and dependable by bringing clean design and solid engineering together to create solutions that work well and scale smoothly.",
-        "As a growing startup, we work closely with our clients, listening carefully and building alongside them."
-      ],
       steps: [
         { no: "01", title: "Start with the real problem", text: "We listen first — understanding users, goals, and constraints before we design anything." },
         { no: "02", title: "Design for speed & simplicity", text: "Clean UI, clean flows. We remove friction so your product feels effortless to use." },
@@ -45,16 +51,13 @@ export default function About() {
 
   /* ---------- DERIVED CONSTANTS ---------- */
   const STORY_STEPS = STORY_CONTENT[0].steps;
-
   const HERO_IMAGES = [hero1, hero2, hero3];
-  const STORY_IMAGES = [story1, story2, story3, story4];
+  const STORY_IMAGES = [story1, story2, story3];
 
   /* ---------- STATE ---------- */
   const [heroIndex, setHeroIndex] = useState(0);
   const [imageIndex, setImageIndex] = useState(0);
   const [stepIndex, setStepIndex] = useState(0);
-  const [storyPaused, setStoryPaused] = useState(false);
-
   /* ---------------- HERO SLIDESHOW ---------------- */
   useEffect(() => {
     const timer = setInterval(() => {
@@ -64,15 +67,14 @@ export default function About() {
   }, []);
   /* ---------------- Story slide ---------------- */
   useEffect(() => {
-    if (storyPaused) return;
-
     const timer = setInterval(() => {
       setImageIndex((i) => (i + 1) % STORY_IMAGES.length);
       setStepIndex((i) => (i + 1) % STORY_STEPS.length);
     }, 6000);
 
     return () => clearInterval(timer);
-  }, [storyPaused]);
+  }, []);
+
 
   /* ---------------- SCROLL ANIMATION ---------------- */
   useEffect(() => {
@@ -99,21 +101,19 @@ export default function About() {
       {/* ================= HERO ================= */}
       <section className="hero-section">
         <div
-          className="hero-bg"
-          key={heroIndex}
+          className="hero-bg is-active"
           style={{ backgroundImage: `url(${HERO_IMAGES[heroIndex]})` }}
         />
+
         <div className="hero-overlay" />
 
         <div className="hero-content">
           <h1>
-            We Build Digital Products <br />
-            <span>That People Trust</span>
+            We Build Digital Products <span>That People Trust</span>
           </h1>
 
           <p>
-            From strategy to scalable engineering, we help teams turn ideas
-            into high-impact digital experiences.
+            Turning ideas into scalable digital products.
           </p>
 
           <div className="hero-actions">
@@ -134,41 +134,86 @@ export default function About() {
 
       {/* ================= PATH & PROMISE ================= */}
       <section className="page-section section-light fade-up path-promise">
-        <h2>Path & Promise</h2>
-        <p>
-          We’re all about progress you can trust — blending creativity, strategy, and engineering to deliver solutions that scale.Future‑ready, built with clarity, and designed to last.
-          Our promise is simple: trust in progress, powered by creativity and smart engineering. We build solutions that grow with you and stand the test of time.
+        <div className="path-promise-overlay" />
+        <h2>Path & <span className="promise">Promise</span></h2>
+        <p className="path">
+          Our path is simple: understand the problem, build with clarity, and deliver solutions you can rely on today and scale tomorrow.
+        </p>
+        <p className="promises">
+          Our promise is consistency: simple design, strong foundations, and systems that scale without complexity.
         </p>
       </section>
 
       {/* ================= WHO WE ARE ================= */}
       <section className="page-section overview-section fade-up section-plain">
-        <h2>Who We Are</h2>
+        <h2>Who We Are!</h2>
 
         <div className="overview-cards">
           <div className="overview-card">
             <img src={about1} alt="" />
-            <h3>Who We Are</h3>
-            <p>Focused builders crafting reliable digital systems.</p>
+            <h3>Our Team</h3>
+            <p>We are a focused team of designers and engineers building dependable digital products for growing businesses.</p>
           </div>
 
           <div className="overview-card">
             <img src={about2} alt="" />
-            <h3>What We Do</h3>
-            <p>Scalable solutions for real business problems.</p>
+            <h3>What We Deliver</h3>
+            <p>We create scalable web and mobile solutions that solve real business and user problems.</p>
           </div>
 
           <div className="overview-card">
             <img src={about3} alt="" />
-            <h3>How We Build</h3>
-            <p>Design clarity + strong engineering.</p>
+            <h3>Our Approach</h3>
+            <p>We combine thoughtful design with strong engineering to deliver fast, reliable, and maintainable systems.</p>
           </div>
 
           <div className="overview-card">
             <img src={about4} alt="" />
-            <h3>Working With You</h3>
-            <p>Transparent, collaborative, dependable.</p>
+            <h3>How We Work With You</h3>
+            <p>We collaborate closely, communicate clearly, and build solutions aligned with your goals.</p>
           </div>
+        </div>
+      </section>
+      {/* ================= WHY LEVRO ================= */}
+      <section className="why-section fade-up">
+        <div className="why-grid">
+
+          <div className="why-item">
+            <div className="why-icon"><img src={right} className="why-icon" alt="Easy setup" /></div>
+            <h4>EASY SET UP</h4>
+            <p>Your team works from our headquarters and is ready to go within weeks.</p>
+          </div>
+
+          <div className="why-item">
+            <div className="why-icon"><img src={user} className="why-icon" alt="Easy setup" /></div>
+            <h4>SCALEABLE</h4>
+            <p>Start nimble and grow your team as your company does.</p>
+          </div>
+
+          <div className="why-item">
+            <div className="why-icon"><img src={top} className="why-icon" alt="Easy setup" /></div>
+            <h4>TOP TALENT</h4>
+            <p>12 years of experience and a large network of English-speaking professionals.</p>
+          </div>
+
+          <div className="why-item">
+            <div className="why-icon"><img src={clock} className="why-icon" alt="Easy setup" /></div>
+            <h4>SAME TIME ZONE</h4>
+            <p>We share your office hours for smooth collaboration.</p>
+          </div>
+
+          <div className="why-item">
+            <div className="why-icon"><img src={office} className="why-icon" alt="Easy setup" /></div>
+            <h4>SOLID INFRASTRUCTURE</h4>
+            <p>Modern office space with reliable connectivity.</p>
+          </div>
+
+          <div className="why-item">
+            <div className="why-icon"><img src={smile} className="why-icon" alt="Easy setup" /></div>
+            <h4>YOUR CULTURE</h4>
+            <p>Your team becomes an extension of your company and values.</p>
+          </div>
+
         </div>
       </section>
 
@@ -177,11 +222,7 @@ export default function About() {
         id="our-story"
         className="page-section story-section fade-up"
       >
-        <div
-          className="story-glass"
-          onMouseEnter={() => setStoryPaused(true)}
-          onMouseLeave={() => setStoryPaused(false)}
-        >
+        <div className="story-glass">
 
           {/* LEFT */}
           <div className="story-left">
@@ -241,41 +282,85 @@ export default function About() {
           </div>
         </div>
       </section>
-
       {/* ================= CORE VALUES ================= */}
-      <section className="page-section values-section fade-up section-light">
-        <span className="section-label">CORE VALUES</span>
-        <h2>What We Stand For</h2>
+      <section className="company-values-section fade-up">
+        {/* PINK OVERLAY */}
+        <div className="company-values-overlay"></div>
 
-        <div className="values-list">
-          {[
-            ["01", "Build with purpose"],
-            ["02", "Stay transparent"],
-            ["03", "Think like users"],
-            ["04", "Ship quality"],
-            ["05", "Keep improving"],
-          ].map(([no, text]) => (
-            <div className="value-item" key={no}>
-              <span>{no}</span>
-              <p>{text}</p>
+        {/* WAVE OVERLAY */}
+        <svg
+          className="wave-overlay"
+          viewBox="0 0 1440 320"
+          preserveAspectRatio="none"
+        >
+          <path
+            fill="rgba(255,255,255,0.12)"
+            d="M0,160L60,144C120,128,240,96,360,90.7C480,85,600,107,720,138.7C840,171,960,213,1080,202.7C1200,192,1320,128,1380,96L1440,64L1440,0L0,0Z"
+          />
+          <path
+            fill="rgba(255,255,255,0.08)"
+            d="M0,192L80,170.7C160,149,320,107,480,112C640,117,800,171,960,181.3C1120,192,1280,160,1360,144L1440,128L1440,0L0,0Z"
+          />
+        </svg>
+
+        {/* CONTENT */}
+        <div className="company-values-content">
+          {/* LEFT */}
+          <div className="values-left">
+            <h2>
+              Our <br /> Company <br /> Values
+            </h2>
+          </div>
+
+          {/* RIGHT */}
+          <div className="values-right">
+            <div className="value-box">
+              <h4>Transparency</h4>
+              <p>
+                Openness with our team & clients. We raise issues and
+                provide solutions promptly.
+              </p>
             </div>
-          ))}
+
+            <div className="value-box">
+              <h4>Commitment</h4>
+              <p>
+                Our word and hard work over everything else.
+                Our clients and vision are our guiding beacons.
+              </p>
+            </div>
+
+            <div className="value-box">
+              <h4>Self Improvement</h4>
+              <p>
+                Never stop learning, never stop evolving
+                into who we want to be.
+              </p>
+            </div>
+
+            <div className="value-box">
+              <h4>Over Deliver</h4>
+              <p>
+                Deliver more value than expected.
+                Every day, over every delivery.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* ================= TEAM ================= */}
       <section className="page-section team-section fade-up section-soft">
-        <span className="section-label">OUR PEOPLE</span>
-        <h2>People Behind Levro</h2>
+        <h2>People Behind <span className="highlight">Levro</span></h2>
 
         <div className="team-grid">
           <div className="team-card">
-            <img src="https://randomuser.me/api/portraits/men/32.jpg" />
+            <img src={tharun} />
             <h4>Tharun Devakumar</h4>
             <p>CEO</p>
           </div>
           <div className="team-card">
-            <img src="https://randomuser.me/api/portraits/women/44.jpg" />
+            <img src={sepal} />
             <h4>Seepal Dharsan</h4>
             <p>CTO</p>
           </div>
@@ -285,7 +370,7 @@ export default function About() {
             <p>CMO</p>
           </div>
           <div className="team-card">
-            <img src="https://randomuser.me/api/portraits/women/44.jpg" />
+            <img src={prem} />
             <h4>Prem Rajeevan</h4>
             <p>COO</p>
           </div>
@@ -298,11 +383,30 @@ export default function About() {
       </section>
 
       {/* ================= CTA ================= */}
-      <section className="page-section cta-section fade-up">
-        <h2>Ready to Build Something Exceptional?</h2>
-        <button className="btn-primary">Contact Levro</button>
-      </section>
+        <section className="page-section cta-section fade-up">
+          {/* Background */}
+          <div className="cta-bg-image" />
+          <div className="cta-bg-overlay" />
 
+          {/* Floating shapes */}
+          <div className="cta-shapes" aria-hidden="true">
+            <span className="s1" />
+            <span className="s2" />
+            <span className="s3" />
+            <span className="s4" />
+            <span className="s5" />
+          </div>
+
+          {/* Content */}
+          <h2>
+            Ready to build <span className="highlight">something</span> Exceptional?
+          </h2>
+
+          <div className="cta-buttons">
+            <Link to="/services" className="cta-primary">Our Services</Link>
+            <Link to="/contact" className="cta-secondary">Contact Our Team</Link>
+          </div>
+        </section>
     </div>
   );
 }
