@@ -10,7 +10,7 @@ import InfoSection from "../components/InfoSection";
 
 const ContactUs = () => {
   return (
-    <div className="contact-us">
+    <div className="contact-us-page">
 
       {/* Top Banner */}
       <div className="top-banner">
@@ -130,7 +130,6 @@ const ContactUs = () => {
     <p>Office Hours: Mon–Fri, 9 AM – 6 PM IST</p> */}
   </div>
 </div>
-
     </div>
   );
 };

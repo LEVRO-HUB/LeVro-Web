@@ -208,13 +208,8 @@ function Service() {
         </p>
 
         <div className="cta-buttons">
-          <Link to="/about" className="cta-primary">
-            Who We Are?
-          </Link>
-
-          <Link to="/contact" className="cta-secondary">
-            Contact Our Team
-          </Link>
+          <a href="/about" className="cta-primary">Who We Are?</a>
+          <a href="/contact" className="cta-secondary">Contact Our Team</a>
         </div>
       </section>
       <section className="services-faq">

@@ -21,11 +21,11 @@ const Footer = () => {
           <div className="footer-col footer-left">
             <h3>Company</h3>
             <ul>
-              <li><Link to="/about">About Us</Link></li>
+              {/* <li><Link to="/about">About Us</Link></li>
               <li><Link to="/services">Our Services</Link></li>
               <li><Link to="/blog">Blog</Link></li>
               <li><Link to="/contact">Contact Us</Link></li>
-              <li><Link to="/careers">Careers</Link></li>
+              <li><Link to="/careers">Careers</Link></li> */}
             </ul>
           </div>
 

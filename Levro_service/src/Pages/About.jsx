@@ -2,27 +2,22 @@ import { useEffect, useRef, useState } from "react";
 import "./About.css";
 import { Link } from "react-router-dom";
 
-import hero1 from "../assets/images/hero1.avif";
-import hero2 from "../assets/images/hero2.avif";
-import hero3 from "../assets/images/hero3.avif";
-import tharun from "../assets/images/tharun.jpeg";
-import sepal from "../assets/images/sepal.jpeg";
-import prem from "../assets/images/prem.jpeg";
+import hero1 from "../assets/Images/hero1.avif";
+import hero2 from "../assets/Images/hero2.avif";
+import hero3 from "../assets/Images/hero3.avif";
+import tharun from "../assets/Images/tharun.jpeg";
+import sepal from "../assets/Images/sepal.jpeg";
+import prem from "../assets/Images/prem.jpeg";
 
-import about1 from "../assets/images/about1.avif";
-import about2 from "../assets/images/about2.avif";
-import about3 from "../assets/images/about3.avif";
-import about4 from "../assets/images/about4.avif";
-
-import story1 from "../assets/images/story1.avif";
-import story2 from "../assets/images/story2.avif";
-import story3 from "../assets/images/story3.avif";
-import user from "../assets/images/Usericon.svg"; 
-import top from "../assets/images/topicon.svg"; 
-import clock from "../assets/images/clockicon.svg"; 
-import right from "../assets/images/righticon.svg"; 
-import office from "../assets/images/officeicon.svg"; 
-import smile from "../assets/images/smileicon.svg"; 
+import story1 from "../assets/Images/story1.avif";
+import story2 from "../assets/Images/story2.avif";
+import story3 from "../assets/Images/story3.avif";
+import user from "../assets/Images/Usericon.svg";
+import top from "../assets/Images/topicon.svg"; 
+// import clock from "../assets/Images/clockicon.svg"; //
+import right from "../assets/Images/righticon.svg"; 
+import office from "../assets/Images/officeicon.svg"; 
+import smile from "../assets/Images/smileicon.svg"; 
 
 
 
@@ -150,25 +145,25 @@ export default function About() {
 
         <div className="overview-cards">
           <div className="overview-card">
-            <img src={about1} alt="" />
+            <img src="https://www.google.com/imgres?q=corporation%20images&imgurl=https%3A%2F%2Fwww.lawdepot.com%2Fimages%2FlawLibrary%2FArticles%2Fshareholders-versus-directors-in-a-corporation.jpeg&imgrefurl=https%3A%2F%2Fwww.lawdepot.com%2Fus%2Fresources%2Fbusiness-articles%2Fshareholders-versus-directors-in-a-corporation%2F&docid=0bjhxoKeL1GcsM&tbnid=9PTolCoxAl41DM&vet=12ahUKEwirvM2ah8eSAxVqRmcHHfbWJJYQnPAOegQIUBAB..i&w=2257&h=1505&hcb=2&ved=2ahUKEwirvM2ah8eSAxVqRmcHHfbWJJYQnPAOegQIUBAB" alt="" />
             <h3>Our Team</h3>
             <p>We are a focused team of designers and engineers building dependable digital products for growing businesses.</p>
           </div>
 
           <div className="overview-card">
-            <img src={about2} alt="" />
+            <img src="https://www.google.com/imgres?q=corporation%20images&imgurl=https%3A%2F%2Fwww.thebritishacademy.ac.uk%2Fmedia%2Fimages%2FSkyscrapers-City-of-London.2e16d0ba.fill-768x432.jpg&imgrefurl=https%3A%2F%2Fwww.thebritishacademy.ac.uk%2Fprogrammes%2Ffuture-of-the-corporation%2F&docid=7vDzTd98CJrLWM&tbnid=8oT8_ZZZ8itrCM&vet=12ahUKEwirvM2ah8eSAxVqRmcHHfbWJJYQnPAOegQIHxAB..i&w=768&h=432&hcb=2&ved=2ahUKEwirvM2ah8eSAxVqRmcHHfbWJJYQnPAOegQIHxAB" alt="" />
             <h3>What We Deliver</h3>
             <p>We create scalable web and mobile solutions that solve real business and user problems.</p>
           </div>
 
           <div className="overview-card">
-            <img src={about3} alt="" />
+            <img src="https://www.google.com/imgres?q=corporation%20images&imgurl=https%3A%2F%2Fwww.financialpoise.com%2Fwp-content%2Fuploads%2F2020%2F04%2Fgroup-of-people-in-a-meeting-1367272-1024x682.jpg&imgrefurl=https%3A%2F%2Fwww.financialpoise.com%2Fcorporation-management-formation-taxation%2F&docid=9grO4w7YMW4GXM&tbnid=w3xxFs6Jtj_L3M&vet=12ahUKEwirvM2ah8eSAxVqRmcHHfbWJJYQnPAOegQIGRAB..i&w=1023&h=682&hcb=2&ved=2ahUKEwirvM2ah8eSAxVqRmcHHfbWJJYQnPAOegQIGRAB" alt="" />
             <h3>Our Approach</h3>
             <p>We combine thoughtful design with strong engineering to deliver fast, reliable, and maintainable systems.</p>
           </div>
 
           <div className="overview-card">
-            <img src={about4} alt="" />
+            <img src="https://www.google.com/imgres?q=corporation%20images&imgurl=https%3A%2F%2Fmpm.ph%2Fwp-content%2Fuploads%2F2013%2F05%2Fcorporate-documents.jpg&imgrefurl=https%3A%2F%2Fmpm.ph%2Fhow-to-register-a-corporation%2F&docid=xowNGjlXKRTa1M&tbnid=sqbMDX6Bb0luYM&vet=12ahUKEwirvM2ah8eSAxVqRmcHHfbWJJYQnPAOegQIVBAB..i&w=1920&h=959&hcb=2&ved=2ahUKEwirvM2ah8eSAxVqRmcHHfbWJJYQnPAOegQIVBAB" alt="" />
             <h3>How We Work With You</h3>
             <p>We collaborate closely, communicate clearly, and build solutions aligned with your goals.</p>
           </div>
@@ -197,7 +192,7 @@ export default function About() {
           </div>
 
           <div className="why-item">
-            <div className="why-icon"><img src={clock} className="why-icon" alt="Easy setup" /></div>
+            {/* <div className="why-icon"><img src={clock} className="why-icon" alt="Easy setup" /></div> */}
             <h4>SAME TIME ZONE</h4>
             <p>We share your office hours for smooth collaboration.</p>
           </div>
@@ -403,8 +398,8 @@ export default function About() {
           </h2>
 
           <div className="cta-buttons">
-            <Link to="/services" className="cta-primary">Our Services</Link>
-            <Link to="/contact" className="cta-secondary">Contact Our Team</Link>
+            {/* <Link to="/services" className="cta-primary">Our Services</Link>
+            <Link to="/contact" className="cta-secondary">Contact Our Team</Link> */}
           </div>
         </section>
     </div>
