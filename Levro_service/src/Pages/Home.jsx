@@ -1,7 +1,10 @@
 import heroImg from "../assets/Images/Banner.jpg"
+import Navbar from "../components/Navbar";
 const Home = () => {
   return (
+
     <section className="min-h-screen bg-linear-to-br from-slate-950 via-slate-900 to-slate-800 text-white flex items-center">
+      <Navbar />
       <div className="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
         {/* LEFT CONTENT */}
@@ -40,12 +43,10 @@ const Home = () => {
   {/* Soft glow */}
   <div className="absolute w-80 h-80 bg-blue-500/20 rounded-full blur-[120px] -z-10"></div>
 </div>
-
-
-
-
       </div>
+      
     </section>
+    
   );
 };
 
