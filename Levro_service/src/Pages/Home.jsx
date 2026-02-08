@@ -4,7 +4,7 @@ const Home = () => {
   return (
 
     <section className="min-h-screen bg-linear-to-br from-slate-950 via-slate-900 to-slate-800 text-white flex items-center">
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
         {/* LEFT CONTENT */}
