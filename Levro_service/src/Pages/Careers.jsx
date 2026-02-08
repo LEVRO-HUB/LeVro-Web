@@ -109,6 +109,7 @@ function Careers() {
       );
     });
 
+    
     // CTA background parallax (subtle)
 gsap.to(".services-cta", {
     backgroundPosition: "50% 60%",
@@ -222,7 +223,7 @@ document.querySelectorAll(".magnetic").forEach((btn) => {
     driven people to grow with us.
     </p>
 
-    <div className="services-pill">
+    <div className="services-pills">
       <button onClick={() => scrollTo("grow-smarter-faster")}>Why LeVro</button>
       <button onClick={() => scrollTo("journey")}>Your Journey</button>
       <button onClick={() => scrollTo("apply")}>Apply</button>
@@ -359,7 +360,7 @@ document.querySelectorAll(".magnetic").forEach((btn) => {
 
       {/* ================= FINAL CTA ================= */}
       <section
-        className="services_cta"
+        className="services-cta"
         style={{ backgroundImage: `url(${ctaBg})` }}
       >
         <h2>
@@ -370,10 +371,10 @@ document.querySelectorAll(".magnetic").forEach((btn) => {
         </p>
 
         <div className="cta-buttons">
-          <Link to="/contact" className="cta-primary">
+          <Link to="/#contact" className="cta-primary">
             Talk to Us
           </Link>
-          <Link to="/about" className="cta-secondary">
+          <Link to="/#about" className="cta-secondary">
             About LeVro
           </Link>
         </div>
