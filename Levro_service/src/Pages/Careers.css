@@ -137,14 +137,14 @@
   }
   
   /* CTA PILLS */
-  .services-pills {
+  .services-pill {
     margin-top: 34px;
     display: flex;
     gap: 14px;
     flex-wrap: wrap;
   }
   
-  .services-pills button {
+  .services-pill button {
     padding: 12px 22px;
     font-size: 0.95rem;
     font-weight: 600;
@@ -157,7 +157,7 @@
     transition: all 0.3s ease;
   }
   
-  .services-pills button:hover {
+  .services-pill button:hover {
     background: rgba(79,209,255,0.18);
     border-color: rgba(79,209,255,0.6);
     transform: translateY(-2px);
@@ -521,7 +521,7 @@
   
   /* ===================== FINAL CTA (DIFFERENT ENERGY) ===================== */
  /* ===================== ASYMMETRIC CTA CARD ===================== */
-.services-cta {
+.services_cta {
     position: relative;
     max-width: 1200px;
     margin: 180px auto;
@@ -542,12 +542,12 @@
   }
   
   /* unskew content */
-  .services-cta > * {
+  .services_cta > * {
     transform: skewY(1.5deg);
   }
   
   /* overlay */
-  .services-cta::before {
+  .services_cta::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -561,18 +561,18 @@
     z-index: 0;
   }
   
-  .services-cta > * {
+  .services_cta > * {
     position: relative;
     z-index: 1;
   }
   
-  .services-cta h2 {
+  .services_cta h2 {
     font-size: clamp(2.8rem, 5vw, 3.4rem);
     font-weight: 900;
     color: #ffffff;
   }
   
-  .services-cta p {
+  .services_cta p {
     margin-top: 18px;
     font-size: 1.05rem;
     max-width: 680px;
@@ -604,7 +604,7 @@
     }
   }
   @media (max-width: 900px) {
-    .services-cta {
+    .services_cta {
       margin: 120px 16px;
       padding: 100px 24px;
       border-radius: 26px;
@@ -612,14 +612,14 @@
   }
   
   @media (max-width: 900px) {
-    .services-cta {
+    .services_cta {
       transform: none;
       border-radius: 28px;
       margin: 120px 16px;
       padding: 100px 24px;
     }
   
-    .services-cta > * {
+    .services_cta > * {
       transform: none;
     }
   

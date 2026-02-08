@@ -1,24 +1,30 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import "./About.css";
-import { Link } from "react-router-dom";
 
 import hero1 from "../assets/Images/hero1.avif";
 import hero2 from "../assets/Images/hero2.avif";
-import hero3 from "../assets/Images/hero3.avif";
-import tharun from "../assets/Images/tharun.jpeg";
-import sepal from "../assets/Images/sepal.jpeg";
-import prem from "../assets/Images/prem.jpeg";
+
+import tharun from "../assets/Images/Members/tharun.jpeg";
+import sepal from "../assets/Images/Members/sepal.png";
+import prem from "../assets/Images/Members/prem.png";
+import mathi from "../assets/Images/Members/mathi.png";
+import hari from "../assets/Images/Members/hari.png";
+
+import cube from "../assets/Images/about_shapes/cube.png";
+import triangle from "../assets/Images/about_shapes/triangle.png";
+import spring from "../assets/Images/about_shapes/spring.png";
+import hook from "../assets/Images/about_shapes/hook.png";
 
 import story1 from "../assets/Images/story1.avif";
 import story2 from "../assets/Images/story2.avif";
 import story3 from "../assets/Images/story3.avif";
-import user from "../assets/Images/Usericon.svg";
-import top from "../assets/Images/topicon.svg"; 
-// import clock from "../assets/Images/clockicon.svg"; //
-import right from "../assets/Images/righticon.svg"; 
-import office from "../assets/Images/officeicon.svg"; 
-import smile from "../assets/Images/smileicon.svg"; 
 
+import clock from "../assets/Images/about_icons/clockicon.svg"; //
+import right from "../assets/Images/about_icons/righticon.svg"; 
+import office from "../assets/Images/about_icons/officeicon.svg"; 
+import smile from "../assets/Images/about_icons/smileicon.svg"; 
+import user from "../assets/Images/about_icons/Usericon.svg";
+import top from "../assets/Images/about_icons/topicon.svg"; 
 
 
 export default function About() {
@@ -46,20 +52,12 @@ export default function About() {
 
   /* ---------- DERIVED CONSTANTS ---------- */
   const STORY_STEPS = STORY_CONTENT[0].steps;
-  const HERO_IMAGES = [hero1, hero2, hero3];
   const STORY_IMAGES = [story1, story2, story3];
 
   /* ---------- STATE ---------- */
-  const [heroIndex, setHeroIndex] = useState(0);
   const [imageIndex, setImageIndex] = useState(0);
   const [stepIndex, setStepIndex] = useState(0);
-  /* ---------------- HERO SLIDESHOW ---------------- */
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setHeroIndex((i) => (i + 1) % HERO_IMAGES.length);
-    }, 6000);
-    return () => clearInterval(timer);
-  }, []);
+
   /* ---------------- Story slide ---------------- */
   useEffect(() => {
     const timer = setInterval(() => {
@@ -94,83 +92,129 @@ export default function About() {
     <div className="about-page">
 
       {/* ================= HERO ================= */}
-      <section className="hero-section">
-        <div
-          className="hero-bg is-active"
-          style={{ backgroundImage: `url(${HERO_IMAGES[heroIndex]})` }}
-        />
+      <section className="about-hero">
+        <div className="about-hero-container">
 
-        <div className="hero-overlay" />
+          {/* LEFT CONTENT */}
+        <div className="about-hero-left exact-left">
 
-        <div className="hero-content">
-          <h1>
-            We Build Digital Products <span>That People Trust</span>
+          <div className="story-label">
+            <span className="bar"></span>
+            <span className="text">Levro Technologies</span>
+          </div>
+
+          <h1 className="hero-title">
+            <span>Your Vision</span>
+            <span>Our Expertise</span>
+            <span className="accent">
+              Get Noticed.<br />Generate Leads.
+            </span>
           </h1>
 
-          <p>
-            Turning ideas into scalable digital products.
+          <p className="hero-sub">
+            We help brands design, build, and scale digital products
+            that people trust and businesses rely on.
           </p>
 
-          <div className="hero-actions">
-            <button className="btn-primary">Explore Our Work</button>
-            <button
-              className="btn-outline"
-              onClick={() =>
-                document
-                  .getElementById("our-story")
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }
-            >
-              Our Story
-            </button>
+        </div>
+
+          {/* RIGHT CONTENT */}
+          <div className="about-hero-right">
+
+            {/* IMAGE CARDS */}
+            <div className="hero-cards">
+              <div className="hero-card">
+                <span className="chip">Tech Blog</span>
+                <img src={hero1} alt="blog" />
+              </div>
+
+              <div className="hero-card">
+                <span className="chip">Trends</span>
+                <img src={hero2} alt="trends" />
+              </div>
+            </div>
+
+            {/* STATS */}
+            <div className="hero-stats">
+              <div>
+                <strong>100+</strong>
+                <span>Projects</span>
+              </div>
+              <div>
+                <strong>250+</strong>
+                <span>Customers</span>
+              </div>
+              <div>
+                <strong>2+</strong>
+                <span>Years</span>
+              </div>
+              <div>
+                <strong>50+</strong>
+                <span>Members</span>
+              </div>
+            </div>
+
+            {/* CTA */}
+            <div className="hero-intro">
+              <button className="watch-btn">▶ Watch Intro</button>
+            </div>
+
           </div>
         </div>
-      </section>
-
-      {/* ================= PATH & PROMISE ================= */}
-      <section className="page-section section-light fade-up path-promise">
-        <div className="path-promise-overlay" />
-        <h2>Path & <span className="promise">Promise</span></h2>
-        <p className="path">
-          Our path is simple: understand the problem, build with clarity, and deliver solutions you can rely on today and scale tomorrow.
-        </p>
-        <p className="promises">
-          Our promise is consistency: simple design, strong foundations, and systems that scale without complexity.
-        </p>
       </section>
 
       {/* ================= WHO WE ARE ================= */}
-      <section className="page-section overview-section fade-up section-plain">
-        <h2>Who We Are!</h2>
+      <section className="strategy-section fade-up">
+          <div className="strategy-container">
 
-        <div className="overview-cards">
-          <div className="overview-card">
-            <img src="https://www.google.com/imgres?q=corporation%20images&imgurl=https%3A%2F%2Fwww.lawdepot.com%2Fimages%2FlawLibrary%2FArticles%2Fshareholders-versus-directors-in-a-corporation.jpeg&imgrefurl=https%3A%2F%2Fwww.lawdepot.com%2Fus%2Fresources%2Fbusiness-articles%2Fshareholders-versus-directors-in-a-corporation%2F&docid=0bjhxoKeL1GcsM&tbnid=9PTolCoxAl41DM&vet=12ahUKEwirvM2ah8eSAxVqRmcHHfbWJJYQnPAOegQIUBAB..i&w=2257&h=1505&hcb=2&ved=2ahUKEwirvM2ah8eSAxVqRmcHHfbWJJYQnPAOegQIUBAB" alt="" />
-            <h3>Our Team</h3>
-            <p>We are a focused team of designers and engineers building dependable digital products for growing businesses.</p>
-          </div>
+            <div className="strategy-header">
+              <span className="strategy-tag">OUR PORTFOLIO</span>
+              <h2>
+                Thoughtful Digital <span>Strategies</span>
+              </h2>
+            </div>
 
-          <div className="overview-card">
-            <img src="https://www.google.com/imgres?q=corporation%20images&imgurl=https%3A%2F%2Fwww.thebritishacademy.ac.uk%2Fmedia%2Fimages%2FSkyscrapers-City-of-London.2e16d0ba.fill-768x432.jpg&imgrefurl=https%3A%2F%2Fwww.thebritishacademy.ac.uk%2Fprogrammes%2Ffuture-of-the-corporation%2F&docid=7vDzTd98CJrLWM&tbnid=8oT8_ZZZ8itrCM&vet=12ahUKEwirvM2ah8eSAxVqRmcHHfbWJJYQnPAOegQIHxAB..i&w=768&h=432&hcb=2&ved=2ahUKEwirvM2ah8eSAxVqRmcHHfbWJJYQnPAOegQIHxAB" alt="" />
-            <h3>What We Deliver</h3>
-            <p>We create scalable web and mobile solutions that solve real business and user problems.</p>
-          </div>
+            <div className="strategy-cards">
 
-          <div className="overview-card">
-            <img src="https://www.google.com/imgres?q=corporation%20images&imgurl=https%3A%2F%2Fwww.financialpoise.com%2Fwp-content%2Fuploads%2F2020%2F04%2Fgroup-of-people-in-a-meeting-1367272-1024x682.jpg&imgrefurl=https%3A%2F%2Fwww.financialpoise.com%2Fcorporation-management-formation-taxation%2F&docid=9grO4w7YMW4GXM&tbnid=w3xxFs6Jtj_L3M&vet=12ahUKEwirvM2ah8eSAxVqRmcHHfbWJJYQnPAOegQIGRAB..i&w=1023&h=682&hcb=2&ved=2ahUKEwirvM2ah8eSAxVqRmcHHfbWJJYQnPAOegQIGRAB" alt="" />
-            <h3>Our Approach</h3>
-            <p>We combine thoughtful design with strong engineering to deliver fast, reliable, and maintainable systems.</p>
-          </div>
+              <div className="strategy-card primary">
+                <div className="icon-wrap">
+                  <img src={triangle} alt="Resolution" />
+                </div>
+                <small>RESOLUTION</small>
+                <p>Our Experts Deliver All Solutions</p>
+              </div>
 
-          <div className="overview-card">
-            <img src="https://www.google.com/imgres?q=corporation%20images&imgurl=https%3A%2F%2Fmpm.ph%2Fwp-content%2Fuploads%2F2013%2F05%2Fcorporate-documents.jpg&imgrefurl=https%3A%2F%2Fmpm.ph%2Fhow-to-register-a-corporation%2F&docid=xowNGjlXKRTa1M&tbnid=sqbMDX6Bb0luYM&vet=12ahUKEwirvM2ah8eSAxVqRmcHHfbWJJYQnPAOegQIVBAB..i&w=1920&h=959&hcb=2&ved=2ahUKEwirvM2ah8eSAxVqRmcHHfbWJJYQnPAOegQIVBAB" alt="" />
-            <h3>How We Work With You</h3>
-            <p>We collaborate closely, communicate clearly, and build solutions aligned with your goals.</p>
+              <div className="strategy-card">
+                <div className="icon-wrap">
+                  <img src={cube} alt="Reputable" />
+                </div>
+                <small>REPUTABLE</small>
+                <p>Develop, Engross & Fulfill Service</p>
+              </div>
+
+              <div className="strategy-card">
+              <div className="icon-wrap">
+                <img src={hook} alt="Assistance" />
+              </div>
+                <small>ASSISTANCE</small>
+                <p>24/7 Instantaneous Customer Service</p>
+              </div>
+
+              <div className="strategy-card">
+                <div className="icon-wrap">
+                  <img src={spring} alt="Reach" />
+                </div>
+                <small>REACH</small>
+                <p>Conveniently Reachable Globally</p>
+              </div>
+
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+
       {/* ================= WHY LEVRO ================= */}
       <section className="why-section fade-up">
+        <h2>Strategic <span className="highlight">Digital Solutions</span></h2>
         <div className="why-grid">
 
           <div className="why-item">
@@ -188,11 +232,11 @@ export default function About() {
           <div className="why-item">
             <div className="why-icon"><img src={top} className="why-icon" alt="Easy setup" /></div>
             <h4>TOP TALENT</h4>
-            <p>12 years of experience and a large network of English-speaking professionals.</p>
+            <p>4 years of experience and a large network of Tech professionals.</p>
           </div>
 
           <div className="why-item">
-            {/* <div className="why-icon"><img src={clock} className="why-icon" alt="Easy setup" /></div> */}
+            <div className="why-icon"><img src={clock} className="why-icon" alt="Easy setup" /></div>
             <h4>SAME TIME ZONE</h4>
             <p>We share your office hours for smooth collaboration.</p>
           </div>
@@ -277,131 +321,51 @@ export default function About() {
           </div>
         </div>
       </section>
-      {/* ================= CORE VALUES ================= */}
-      <section className="company-values-section fade-up">
-        {/* PINK OVERLAY */}
-        <div className="company-values-overlay"></div>
-
-        {/* WAVE OVERLAY */}
-        <svg
-          className="wave-overlay"
-          viewBox="0 0 1440 320"
-          preserveAspectRatio="none"
-        >
-          <path
-            fill="rgba(255,255,255,0.12)"
-            d="M0,160L60,144C120,128,240,96,360,90.7C480,85,600,107,720,138.7C840,171,960,213,1080,202.7C1200,192,1320,128,1380,96L1440,64L1440,0L0,0Z"
-          />
-          <path
-            fill="rgba(255,255,255,0.08)"
-            d="M0,192L80,170.7C160,149,320,107,480,112C640,117,800,171,960,181.3C1120,192,1280,160,1360,144L1440,128L1440,0L0,0Z"
-          />
-        </svg>
-
-        {/* CONTENT */}
-        <div className="company-values-content">
-          {/* LEFT */}
-          <div className="values-left">
-            <h2>
-              Our <br /> Company <br /> Values
-            </h2>
-          </div>
-
-          {/* RIGHT */}
-          <div className="values-right">
-            <div className="value-box">
-              <h4>Transparency</h4>
-              <p>
-                Openness with our team & clients. We raise issues and
-                provide solutions promptly.
-              </p>
-            </div>
-
-            <div className="value-box">
-              <h4>Commitment</h4>
-              <p>
-                Our word and hard work over everything else.
-                Our clients and vision are our guiding beacons.
-              </p>
-            </div>
-
-            <div className="value-box">
-              <h4>Self Improvement</h4>
-              <p>
-                Never stop learning, never stop evolving
-                into who we want to be.
-              </p>
-            </div>
-
-            <div className="value-box">
-              <h4>Over Deliver</h4>
-              <p>
-                Deliver more value than expected.
-                Every day, over every delivery.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* ================= TEAM ================= */}
-      <section className="page-section team-section fade-up section-soft">
-        <h2>People Behind <span className="highlight">Levro</span></h2>
+     <section className="team-section">
+        <h2>
+          People Behind <span className="highlight">Levro</span>
+        </h2>
 
         <div className="team-grid">
           <div className="team-card">
-            <img src={tharun} />
+            <img src={tharun} alt="team preview" />
             <h4>Tharun Devakumar</h4>
             <p>CEO</p>
           </div>
+
           <div className="team-card">
-            <img src={sepal} />
+            <img src={sepal} alt="team preview" />
             <h4>Seepal Dharsan</h4>
             <p>CTO</p>
           </div>
+
           <div className="team-card">
-            <img src="https://randomuser.me/api/portraits/women/44.jpg" />
+            <img src={mathi} alt="team preview" />
             <h4>Mathivanan</h4>
             <p>CMO</p>
           </div>
+
           <div className="team-card">
-            <img src={prem} />
+            <img src={prem} alt="team preview" />
             <h4>Prem Rajeevan</h4>
             <p>COO</p>
           </div>
+
           <div className="team-card">
-            <img src="https://randomuser.me/api/portraits/women/44.jpg" />
+            <img src={hari} alt="team preview" />
             <h4>Hariharan</h4>
             <p>CFO</p>
           </div>
         </div>
+
+        <div className="team-quote-wrapper">
+          <p className="team-quote">
+            “Behind every great product is a team that believes in clarity, trust, and continuous growth”
+          </p>
+        </div>
       </section>
-
-      {/* ================= CTA ================= */}
-        <section className="page-section cta-section fade-up">
-          {/* Background */}
-          <div className="cta-bg-image" />
-          <div className="cta-bg-overlay" />
-
-          {/* Floating shapes */}
-          <div className="cta-shapes" aria-hidden="true">
-            <span className="s1" />
-            <span className="s2" />
-            <span className="s3" />
-            <span className="s4" />
-            <span className="s5" />
-          </div>
-
-          {/* Content */}
-          <h2>
-            Ready to build <span className="highlight">something</span> Exceptional?
-          </h2>
-
-          <div className="cta-buttons">
-            {/* <Link to="/services" className="cta-primary">Our Services</Link>
-            <Link to="/contact" className="cta-secondary">Contact Our Team</Link> */}
-          </div>
-        </section>
     </div>
   );
 }

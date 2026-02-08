@@ -222,7 +222,7 @@ document.querySelectorAll(".magnetic").forEach((btn) => {
     driven people to grow with us.
     </p>
 
-    <div className="services-pills">
+    <div className="services-pill">
       <button onClick={() => scrollTo("grow-smarter-faster")}>Why LeVro</button>
       <button onClick={() => scrollTo("journey")}>Your Journey</button>
       <button onClick={() => scrollTo("apply")}>Apply</button>
@@ -359,7 +359,7 @@ document.querySelectorAll(".magnetic").forEach((btn) => {
 
       {/* ================= FINAL CTA ================= */}
       <section
-        className="services-cta"
+        className="services_cta"
         style={{ backgroundImage: `url(${ctaBg})` }}
       >
         <h2>
