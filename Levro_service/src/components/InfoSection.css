@@ -1,74 +1,74 @@
+/* Wrapper */
 .info-section {
   display: flex;
-  justify-content: space-around;
-  gap: 30px;
-  padding: 60px 20px;
-  flex-wrap: wrap;
-  /* background: linear-gradient(120deg, #f0f9ff, #ffffff); */
+  flex-wrap: wrap;              /* allow wrapping */
+  justify-content: center;
+  gap: 20px;                    /* reduced spacing between cards */
+  padding: 20px 20px 0 20px; /* remove bottom padding */
+  box-sizing: border-box;             /* remove bottom margin */
+  background: #f9f9f9;
 }
 
-/* Card base */
+/* Card */
 .info-card {
-  flex: 1;
-  max-width: 300px;
-  /* background: #fff; */
-  padding: 25px;
+  flex: 1 1 260px;              /* slightly smaller base width */
+  max-width: 320px;
+  background: #fff;
   border-radius: 12px;
-  text-align: center;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  animation: fadeInUp 0.8s ease forwards;
-  opacity: 0;
+  padding: 16px;                /* reduced inner padding */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Staggered entrance */
-.info-card:nth-child(1) { animation-delay: 0.2s; }
-.info-card:nth-child(2) { animation-delay: 0.4s; }
-.info-card:nth-child(3) { animation-delay: 0.6s; }
-
-/* Hover effect */
 .info-card:hover {
-  transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 10px 25px rgba(0,162,255,0.25);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
 }
 
-/* Icon styling (static, no animation) */
+/* Icon */
 .info-icon {
-  font-size: 2.5rem;
-  color: rgb(0,162,255);
-  margin-bottom: 15px;
-  display: flex; justify-content: center; /* centers horizontally */ 
-  align-items: center; /* centers vertically if needed */ 
-  margin-bottom: 15px;
+  margin-bottom: 8px;           /* tighter spacing below icon */
 }
 
-/* Headings */
+.info-icon img {
+  width: 50px;                  /* consistent smaller size */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Heading */
 .info-card h3 {
-  font-size: 1.6rem;
-  font-weight: 600;
-  color: rgb(0,162,255);
-  margin-bottom: 10px;
-  transition: color 0.3s ease;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: rgb(0, 162, 255);
+  margin-bottom: 6px;           /* reduced spacing */
 }
 
-/* .info-card:hover h3 {
-  color: #ff6600;
-} */
-
-/* Paragraphs */
+/* Paragraph */
 .info-card p {
-  font-size: 1rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
   color: #333;
-  line-height: 1.6;
+  margin: 4px 0;                /* tighter spacing between lines */
 }
 
-/* Keyframes */
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to   { opacity: 1; transform: translateY(0); }
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .info-section {
+    flex-direction: column;     /* stack cards vertically */
+    align-items: center;
+    gap: 16px;                  /* smaller gap on mobile */
+    padding: 12px;
+  }
+
+  .info-card {
+    width: 100%;
+    max-width: 100%;
+    padding: 14px;
+  }
 }
-.info-icon img { width: 70px; /* reduced size */ 
-    height: 70px;
-    object-fit: contain;
-    display: block; /* prevents inline spacing issues */
- }

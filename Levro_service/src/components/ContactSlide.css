@@ -1,44 +1,74 @@
+/* Wrapper */
 .contact-slide {
-  max-width: 600px;
-  margin: 40px auto;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: clamp(16px, 4vw, 32px);
   text-align: center;
 }
 
+/* Image wrapper */
 .slide-wrapper {
-  position: relative;
-  width: 100%;
-  height: 300px;
-  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
+/* Image */
 .slide-img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  max-width: 800px;   /* desktop size */
   border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
-
-  /* right-to-left + pop effect */
-  animation: slidePopIn 0.7s ease forwards;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+  object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
+.slide-img:hover {
+  transform: scale(1.03);
+}
+
+/* Paragraph */
 .slide-paragraph {
-  margin-top: 15px;
-  font-size: 1.3rem;
-  color: #333;
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
   line-height: 1.5;
+  color: #333;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 12px;
 }
 
-/* Keyframes: slide in from right, scale up, shadow grows */
-@keyframes slidePopIn {
-  from {
-    transform: translateX(100%) scale(0.9);
-    opacity: 0;
-    box-shadow: 0 0 0 rgba(0,0,0,0);
+/* Mobile */
+@media (max-width: 600px) {
+  .slide-img {
+    max-width: 100%;   /* shrink to fit screen */
+    border-radius: 8px;
   }
-  to {
-    transform: translateX(0) scale(1);
-    opacity: 1;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+
+  .slide-paragraph {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+}
+
+/* Tablet */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .slide-img {
+    max-width: 600px;  /* medium size */
+  }
+
+  .slide-paragraph {
+    font-size: 1rem;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+  .slide-img {
+    max-width: 800px;  /* large size */
+  }
+
+  .slide-paragraph {
+    font-size: 1.2rem;
   }
 }

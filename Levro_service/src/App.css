@@ -1,66 +1,54 @@
-@import "tailwindcss";
-/* Reset and global defaults */
-html, body, #root, .App {
+/* Reset */
+html, body, #root {
   margin: 0;
   padding: 0;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden; /* prevent horizontal scroll globally */
+}
+
+/* Wrapper */
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Sections */
+.app-wrapper section {
   width: 100%;
-  font-family: "Segoe UI", Arial, sans-serif;
-  background: #f4f6f9;
-  color: #333;
-  scroll-behavior: smooth;
+  min-height: 100vh; /* each section fills screen height */
+  padding: 20px;
   box-sizing: border-box;
 }
-/* Grid system for reusable layouts */
-.grid {
-  display: grid;
-  gap: 24px;
-}
-.grid-2 {
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-}
-.grid-3 {
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-}
 
-/* Banner (can be reused anywhere) */
-.banner {
-  width: 100%;
-  background: #0078d7;
-  color: #fff;
-  text-align: center;
-  padding: 40px 20px;
-  border-radius: 8px;
-}
-.banner h1 {
-  margin: 0;
-  font-size: 2rem;
-}
-.banner p {
-  margin-top: 10px;
-  font-size: 1.1rem;
-  opacity: 0.9;
-}
-
-/* Card style (for sections like Contact Us, Services, etc.) */
-.card {
-  background: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
-}
-
-/* Responsive tweaks */
-@media (max-width: 768px) {
-  .container {
-    padding: 10px;
+/* Mobile */
+@media (max-width: 600px) {
+  .app-wrapper {
+    background: #f9f9f9; /* optional */
   }
-  .banner {
-    padding: 20px;
+
+  .app-wrapper section {
+    padding: 16px;
+    font-size: 0.9rem;
+    max-width: 100vw; /* ensure no overflow */
+  }
+}
+
+/* Tablet */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .app-wrapper section {
+    padding: 24px;
+    font-size: 1rem;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+  .app-wrapper section {
+    padding: 32px;
+    font-size: 1.1rem;
   }
 }
