@@ -107,3 +107,67 @@
 .navbar-spacer {
   flex: 1; /* matches navbar height to prevent content jump */
 }
+/* Hamburger icon */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  margin-left: auto;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Animate hamburger into X */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Mobile styles */
+@media (max-width: 600px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .navbar-links {
+    position: absolute;
+    top: 2cm; /* matches navbar height */
+    right: 0;
+    background: #3586ff;
+    flex-direction: column;
+    width: 200px;
+    padding: 1rem;
+    display: none;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 8px 20px rgba(53, 134, 255, 0.35);
+  }
+
+  .navbar-links.open {
+    display: flex;
+    animation: slideDown 0.3s ease forwards;
+  }
+}
+
+/* Slide-down animation */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
