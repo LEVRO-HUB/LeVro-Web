@@ -150,7 +150,6 @@ function Service() {
     </section>
  
       <section id="uiux" className="service-block">
-        <svg viewBox="0 0 1440 100"><path fill="#f7f7ff" d="M0,40 C240,80 480,0 720,20 960,40 1200,80 1440,40 L1440,0 L0,0 Z" /></svg>
         <h2>How can <span className="highlight">UI/UX</span> design That Turns Visitors Into Loyal Customers?</h2>
         <p>We design intuitive, user-centric interfaces that enhance usability, build trust, and keep users engaged—driving long-term loyalty.</p>
         <div className="linear-stack">
@@ -167,7 +166,6 @@ function Service() {
       </section>
 
       <section id="erp" className="service-block">
-        <svg viewBox="0 0 1440 100"><path fill="#f7f7ff" d="M0,40 C240,80 480,0 720,20 960,40 1200,80 1440,40 L1440,0 L0,0 Z" /></svg>
         <h2>How do <span className="highlight">ERP Solutions</span> streamline your entire business?</h2>
         <p>Our ERP solutions unify all your core business processes into a single, integrated system, improving operational efficiency, real-time visibility, and decision-making across departments.</p>
         <Slideshow /> 
@@ -213,7 +211,7 @@ function Service() {
         </div>
       </section>
       <section className="services-faq">
-        <h2>Frequently <span className="highlight">Asked Questions</span>!</h2>
+        <h2>Frequently <span className="highlight">Asked Questions</span></h2>
 
         <div className="faq-list">
           <div className="faq-item">
