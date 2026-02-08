@@ -13,8 +13,8 @@ function MainPage() {
   return ( 
     <>
       <section id="home"><Home /></section>
-      <section id="about"><About /></section>
       <section id="services"><Service /></section>
+      <section id="about"><About /></section>
       <section id="contact"><ContactUs /></section>
     </>
   //  // 

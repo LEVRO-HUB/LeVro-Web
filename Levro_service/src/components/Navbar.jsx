@@ -23,7 +23,7 @@ export default function Navbar() {
     <nav className="navbar">
       <div className="navbar-pill">
         <div className="navbar-logo">LEVRO</div>
-        <div className="navbar-spacer"></div>
+        {/* <div className="navbar-spacer"></div> */}
 
         {/* Hamburger button */}
         <div

@@ -184,7 +184,7 @@ banner-tagline { font-size: clamp(0.9rem, 2.5vw, 1.2rem); line-height: 1.4; marg
   }
 
 /* Contact icons */
-./* Contact container */
+/* Contact container */
 .contact-container {
   text-align: center;
   padding: 20px 0;
@@ -472,4 +472,36 @@ banner-tagline { font-size: clamp(0.9rem, 2.5vw, 1.2rem); line-height: 1.4; marg
   background: #003366;
   color: #fff;
   transform: translateX(-5px);
+}
+/* ===== ACCORDION + FORM LAYOUT ===== */
+.contact-flex {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* Left: Accordion */
+.contact-left {
+  flex: 1;
+}
+
+/* Right: Form */
+.contact-right {
+  flex: 1;
+}
+
+/* Make form full width */
+.contact-form {
+  width: 100%;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .contact-flex {
+    flex-direction: column;
+  }
 }

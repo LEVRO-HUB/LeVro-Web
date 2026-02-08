@@ -29,7 +29,7 @@ export default function Accordion() {
     <div className="accordion">
       {/* Section Title */}
       <h2 className="accordion-title-main">
-        Frequently <span className="highlight">Asked</span> Questions
+        Reach <span className="highlight">Out</span> Options
       </h2>
 
       <AccordionItem

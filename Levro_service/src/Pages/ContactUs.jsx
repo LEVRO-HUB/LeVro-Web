@@ -62,50 +62,57 @@ const ContactUs = () => {
       </div>
       {/* <Slideshow /> */}
       <ContactSlide />
-      {/* Accordion Section */}
-      <Accordion />
 
-      {/* Contact Form */}
-      <form className="contact-form">
-        <h2>How can we help you?</h2>
+  {/* Contact Form */}
+<div className="contact-flex">
+  <div className="contact-left">
+    <Accordion />
+  </div>
 
-        <div className="form-row">
-          <input type="text" placeholder="First Name" required />
-          <input type="text" placeholder="Last Name" required />
-        </div>
+  <div className="contact-right">
+    <form id="contact-form" className="contact-form" action="/submit" method="POST">
+      <h2>How can we help you?</h2>
 
-        <div className="form-row">
-          <input type="email" placeholder="Work Email" required />
-          <input type="text" placeholder="Job Title" />
-        </div>
+      <div className="form-row">
+        <input type="text" placeholder="First Name" required />
+        <input type="text" placeholder="Last Name" required />
+      </div>
 
-        <div className="form-row">
-          <input type="text" placeholder="Company" />
-          <select required>
-            <option value="">Select Country</option>
-            <option value="IN">India</option>
-            <option value="US">United States</option>
-            <option value="UK">United Kingdom</option>
-            <option value="CA">Canada</option>
-          </select>
-        </div>
+      <div className="form-row">
+        <input type="email" placeholder="Work Email" required />
+        <input type="text" placeholder="Job Title" />
+      </div>
 
-        <textarea placeholder="Message" rows="5"></textarea>
+      <div className="form-row">
+        <input type="text" placeholder="Company" />
+        <select required>
+          <option value="">Select Country</option>
+          <option value="IN">India</option>
+          <option value="US">United States</option>
+          <option value="UK">United Kingdom</option>
+          <option value="CA">Canada</option>
+        </select>
+      </div>
 
-        <div className="form-check">
-          <label>
-            <input type="checkbox" required /> I confirm, I have read and agree to the Privacy Policy.
-          </label>
-        </div>
+      <textarea placeholder="Message" rows="5"></textarea>
 
-        <div className="form-check">
-          <label>
-            <input type="checkbox" /> I would like to receive alerts and updates.
-          </label>
-        </div>
+      <div className="form-check">
+        <label>
+          <input type="checkbox" required /> I confirm, I have read and agree to the Privacy Policy.
+        </label>
+      </div>
 
-        <button type="submit" className="submit-btn">Submit</button>
-      </form>
+      <div className="form-check">
+        <label>
+          <input type="checkbox" /> I would like to receive alerts and updates.
+        </label>
+      </div>
+
+      <button type="submit" className="submit-btn">Submit</button>
+    </form>
+  </div>
+</div>
+
       <InfoSection />
 
       {/* Contact Methods */}
