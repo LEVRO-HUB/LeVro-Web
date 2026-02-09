@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./ContactSlide.css";
 
-import con1 from "../assets/images/con1.jpg";
-import con2 from "../assets/images/con2.jpg";
-import con3 from "../assets/images/con3.jpg";
+import con1 from "../assets/images/slidee1.jpg";
+import con2 from "../assets/Images/slidee2.jpg";
+import con3 from "../assets/images/slidee3.jpg";
 
 const ContactSlide = () => {
   const images = [con1, con2, con3];

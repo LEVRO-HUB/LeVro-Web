@@ -31,7 +31,7 @@ const Footer = () => {
 
           {/* Center: Icons */}
           <div className="footer-col footer-center">
-            <h3>LEVRO icon</h3>
+            <h3>LEVRO</h3>
             {/* <div className="social-icons">
               <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
               <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
