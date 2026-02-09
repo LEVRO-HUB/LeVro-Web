@@ -10,7 +10,7 @@ import heroBg from "../assets/images/careers-TorB.gif";
 import internshipImg from "../assets/images/careers-work.jpg";
 import growthImg from "../assets/images/careers-collaboration.jfif";
 import techGif from "../assets/images/careers-growth.gif";
-import ctaBg from "../assets/images/careers-hero.jfif";
+import ctaBg from "../assets/images/careers-BorT.gif";
 
 function CareerForm() {
     const [submitted, setSubmitted] = useState(false);
