@@ -6,11 +6,11 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Link } from "react-router-dom";
 
 /* ASSETS */
-import heroBg from "../assets/images/careers-TorB.gif";
-import internshipImg from "../assets/images/careers-work.jpg";
-import growthImg from "../assets/images/careers-collaboration.jfif";
-import techGif from "../assets/images/careers-growth.gif";
-import ctaBg from "../assets/images/careers-BorT.gif";
+import heroBg from "../assets/Images/careers-TorB.gif";
+import internshipImg from "../assets/Images/careers-work.jpg";
+import growthImg from "../assets/Images/careers-collaboration.jfif";
+import techGif from "../assets/Images/careers-growth.gif";
+import ctaBg from "../assets/Images/careers-hero.jfif";
 
 function CareerForm() {
     const [submitted, setSubmitted] = useState(false);

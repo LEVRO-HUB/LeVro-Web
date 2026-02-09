@@ -1,9 +1,9 @@
 // InfoSection.jsx
 import React from "react";
 import "./InfoSection.css";
-import visitIcon from "../assets/images/visit-icon.png";
-import callIcon from "../assets/images/call-icon.png";
-import emailIcon from "../assets/images/email-icon.png";
+import visitIcon from "../assets/Images/visit-icon.png";
+import callIcon from "../assets/Images/call-icon.png";
+import emailIcon from "../assets/Images/email-icon.png";
 
 export default function InfoSection() {
   return (
