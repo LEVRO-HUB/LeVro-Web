@@ -2,14 +2,14 @@ import "./Service.css";
 import Slideshow from "../components/Slideshow";
 import { useEffect } from "react";
 import { gsap } from "gsap";
-import img1 from "../assets/images/img1.png";
-import img2 from "../assets/images/img2.png";
-import img9 from "../assets/images/img11.jfif";
-import img4 from "../assets/images/img10.jfif";
-import img5 from "../assets/images/img12.jfif";
-import gif6 from "../assets/images/gif6.gif";
-import gif7 from "../assets/images/gif8.gif";
-import gif8 from "../assets/images/gif7.gif";
+import img1 from "../assets/Images/img1.png";
+import img2 from "../assets/Images/img2.png";
+import img9 from "../assets/Images/img11.jfif";
+import img4 from "../assets/Images/img10.jfif";
+import img5 from "../assets/Images/img12.jfif";
+import gif6 from "../assets/Images/gif6.gif";
+import gif7 from "../assets/Images/gif8.gif";
+import gif8 from "../assets/Images/gif7.gif";
 import { Link } from "react-router-dom";
 
 function Service() {
