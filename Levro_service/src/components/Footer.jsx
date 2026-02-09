@@ -1,7 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
 import "./Footer.css";
-import wave from "../assets/images/wave.png";
+import wave from "../assets/Images/wave.png";
 
 const Footer = () => {
   return (
