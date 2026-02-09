@@ -2,7 +2,6 @@ import "./Service.css";
 import Slideshow from "../components/Slideshow";
 import { useEffect } from "react";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import img1 from "../assets/images/img1.png";
 import img2 from "../assets/images/img2.png";
 import img9 from "../assets/images/img11.jfif";
@@ -20,101 +19,90 @@ function Service() {
     });
   };
 
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
+    useEffect(() => {
+    const sections = document.querySelectorAll(".service-block");
 
-    gsap.utils.toArray(".service-block").forEach((section) => {
-      const heading = section.querySelector("h2");
-      const text = section.querySelector("p");
-      const cards = section.querySelectorAll(".linear-card");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
 
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: section,
-          start: "top 85%",
-          once: true,
-        },
-      });
+        const section = entry.target;
+        const isBackend = section.id === "backend";
 
-      if (heading) {
-        tl.fromTo(
-          heading,
-          { opacity: 0, y: 30 },
-          {
+        const tl = gsap.timeline();
+
+        if (isBackend) {
+          const columns = section.querySelectorAll(".feature-column");
+
+          tl.to(columns, {
             opacity: 1,
             y: 0,
-            duration: 0.6,
-            ease: "power3.out",
-          }
-        );
-      }
-
-      if (text) {
-        tl.fromTo(
-          text,
-          { opacity: 0, y: 20 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.5,
-            ease: "power3.out",
-          },
-          "-=0.3"
-        );
-      }
-
-      if (cards.length) {
-        tl.fromTo(
-          cards,
-          { opacity: 0, y: 40, scale: 0.95 },
-          {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            rotateY: 14,
-            duration: 0.9,
+            duration: 0.8,
             stagger: 0.25,
             ease: "power3.out",
-          },
-          "-=0.2"
-        );
+          });
+        } else {
+          const heading = section.querySelector("h2");
+          const text = section.querySelector("p");
+          const cards = section.querySelectorAll(".linear-card");
+
+          if (heading) {
+            tl.to(heading, {
+              opacity: 1,
+              y: 0,
+              duration: 0.6,
+              ease: "power3.out",
+            });
+          }
+
+          if (text) {
+            tl.to(text, {
+              opacity: 1,
+              y: 0,
+              duration: 0.5,
+              ease: "power3.out",
+            }, "-=0.3");
+          }
+
+          if (cards.length) {
+            tl.to(cards, {
+              opacity: 1,
+              y: 0,
+              scale: 1,
+              rotateY: 14,
+              rotateX: 6,
+              duration: 0.9,
+              stagger: 0.25,
+              ease: "power3.out",
+            }, "-=0.2");
+          }
+        }
+
+        observer.unobserve(section);
+      });
+    }, { threshold: 0.2 });
+
+    sections.forEach((section) => {
+      const isBackend = section.id === "backend";
+      const isERP = section.id === "erp";
+
+      if (isBackend) {
+        gsap.set(section.querySelectorAll(".feature-column"), {
+          opacity: 0,
+          y: 40,
+        });
+      } else {
+        gsap.set(section.querySelectorAll("h2, p, .linear-card"), {
+          opacity: 0,
+          y: 40,
+          scale: 0.95,
+        });
       }
+
+      observer.observe(section);
     });
 
-    gsap.fromTo(
-      ".why-choose-us",
-      { opacity: 0, y: 40 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: ".why-choose-us",
-          start: "top 80%",
-          once: true,
-        },
-      }
-    );
-
-    gsap.fromTo(
-      ".feature-column",
-      { opacity: 0, y: 40 },
-      {
-        opacity: 1,
-        y: 0,
-        stagger: 0.2,
-        duration: 1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: ".dual-feature",
-          start: "top 75%",
-          once: true,
-        },
-      }
-    );
-
-    ScrollTrigger.refresh();
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -171,7 +159,8 @@ function Service() {
         <Slideshow /> 
       </section>
 
-      <section id="backend" className="dual-feature">
+      <section id="backend" className="service-block">
+      <div className="dual-feature">
         <div className="feature-column">
           <h2>Backend Services</h2>
           <p>
@@ -196,6 +185,7 @@ function Service() {
             <img src={img2} alt="App preview" />
           </div>
         </div>
+      </div>
       </section>
 
       <section className="services-cta">
