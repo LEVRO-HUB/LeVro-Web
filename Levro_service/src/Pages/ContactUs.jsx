@@ -1,7 +1,6 @@
 import React from "react";
 import ContactSlide from "../components/ContactSlide";
 import "./ContactUs.css";
-import bannerImg from "../assets/Images/Banner.jpg"; 
 import Accordion from "../components/Accordion";
 import linkedin from "../assets/Images/linkedin.png";
 import twitter from "../assets/Images/twitter.png";
