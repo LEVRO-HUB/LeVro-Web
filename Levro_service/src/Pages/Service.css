@@ -137,7 +137,7 @@
   border-radius: 22px;
   overflow: hidden;
 
-  transform: rotateY(14deg) rotateX(6deg);
+  transform: none;
   box-shadow: 0 60px 120px rgba(0,0,0,0.35);
 
   will-change: transform, opacity;
@@ -427,6 +427,12 @@
   .service-block h2 {
     font-size: 2rem;
   }
+  
+.service-block h2,
+.service-block p,
+.linear-card {
+  will-change: transform, opacity;
+}
 
   /* LINEAR STACK → COLUMN */
   .linear-stack {
