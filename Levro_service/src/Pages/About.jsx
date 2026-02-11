@@ -4,7 +4,7 @@ import "./About.css";
 import hero1 from "../assets/Images/hero1.avif";
 import hero2 from "../assets/Images/hero2.avif";
 
-import prem from "../assets/Images/Members/prem.png";
+import prem from "../assets/Images/Members/prem.jpeg";
 import mathi from "../assets/Images/Members/mathi.png";
 
 import cube from "../assets/Images/about_shapes/cube.png";
