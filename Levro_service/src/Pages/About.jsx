@@ -4,11 +4,8 @@ import "./About.css";
 import hero1 from "../assets/Images/hero1.avif";
 import hero2 from "../assets/Images/hero2.avif";
 
-import tharun from "../assets/Images/Members/tharun.jpeg";
-import sepal from "../assets/Images/Members/sepal.png";
 import prem from "../assets/Images/Members/prem.png";
 import mathi from "../assets/Images/Members/mathi.png";
-import hari from "../assets/Images/Members/hari.png";
 
 import cube from "../assets/Images/about_shapes/cube.png";
 import triangle from "../assets/Images/about_shapes/triangle.png";
@@ -163,6 +160,21 @@ export default function About() {
         </div>
       </section>
 
+      <section className="cto-mini">
+        <div className="cto-mini-card">
+          <div className="cto-mini-avatar">
+            <img src={prem} alt="CTO" />
+          </div>
+
+          <span className="cto-mini-label">Prem Rajeevan / COO</span>
+
+          <p>
+            Strategy isn’t just planning — it’s disciplined execution that drives real growth.
+          </p>
+
+        </div>
+      </section>
+
       {/* ================= WHO WE ARE ================= */}
       <section className="strategy-section fade-up">
           <div className="strategy-container">
@@ -255,7 +267,7 @@ export default function About() {
 
         </div>
       </section>
-
+  
       {/* ================= OUR STORY ================= */}
       <section
         id="our-story"
@@ -321,49 +333,18 @@ export default function About() {
           </div>
         </div>
       </section>
-
-      {/* ================= TEAM ================= */}
-     <section className="team-section">
-        <h2>
-          People Behind <span className="highlight">Levro</span>
-        </h2>
-
-        <div className="team-grid">
-          <div className="team-card">
-            <img src={tharun} alt="team preview" />
-            <h4>Tharun Devakumar</h4>
-            <p>CEO</p>
+      <section className="cto-mini">
+        <div className="cto-mini-card">
+          <div className="cto-mini-avatar">
+            <img src={mathi} alt="CTO" />
           </div>
 
-          <div className="team-card">
-            <img src={sepal} alt="team preview" />
-            <h4>Seepal Dharsan</h4>
-            <p>CTO</p>
-          </div>
+          <span className="cto-mini-label">Mathivanan / MD</span>
 
-          <div className="team-card">
-            <img src={mathi} alt="team preview" />
-            <h4>Mathivanan</h4>
-            <p>CMO</p>
-          </div>
-
-          <div className="team-card">
-            <img src={prem} alt="team preview" />
-            <h4>Prem Rajeevan</h4>
-            <p>COO</p>
-          </div>
-
-          <div className="team-card">
-            <img src={hari} alt="team preview" />
-            <h4>Hariharan</h4>
-            <p>CFO</p>
-          </div>
-        </div>
-
-        <div className="team-quote-wrapper">
-          <p className="team-quote">
-            “Behind every great product is a team that believes in clarity, trust, and continuous growth”
+          <p>
+            We didn’t start with everything figured out — just a clear purpose and the drive to build something meaningful.
           </p>
+
         </div>
       </section>
     </div>
