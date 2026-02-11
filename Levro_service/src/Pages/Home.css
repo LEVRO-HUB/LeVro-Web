@@ -1,0 +1,222 @@
+/* ===============================
+   HERO SECTION
+================================ */
+
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #020617, #0f172a, #1e293b);
+  color: white;
+  overflow: hidden;
+}
+
+.hero-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 24px;
+}
+
+.hero-content {
+  max-width: 750px;
+}
+
+/* ===============================
+   HEADING
+================================ */
+
+.hero-heading {
+  display: flex;
+  flex-direction: column;
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  margin-bottom: 32px;
+}
+
+.hero-heading .line-2 {
+  background: linear-gradient(90deg, #3b82f6, #00d4ff);
+  background-clip: text;                 /* Standard */
+  -webkit-background-clip: text;         /* Safari */
+  color: transparent;                    /* Standard */
+  -webkit-text-fill-color: transparent;  /* Safari */
+}
+.leader-note {
+  margin-top: 36px;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  max-width: 540px;
+}
+
+/* Perfect Circle Container */
+.leader-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 2px solid rgba(0, 162, 255, 0.5);
+  box-shadow: 0 8px 20px rgba(0, 162, 255, 0.25);
+}
+
+.leader-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Glass Message Card */
+.leader-message {
+  background: rgba(255, 255, 255, 0.04);
+  padding: 14px 18px;
+  border-radius: 14px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.leader-message:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 162, 255, 0.25);
+}
+
+/* Title */
+.leader-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #00a2ff;
+  margin-bottom: 6px;
+}
+
+/* Message Text */
+.leader-message p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  opacity: 0.85;
+  margin: 0;
+}
+
+/* ===============================
+   BUTTONS
+================================ */
+
+.hero-buttons {
+  margin-top: 32px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.primary-btn {
+  background: #f59e0b;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.secondary-btn {
+  background: transparent;
+  border: 1px solid #3b82f6;
+  color: #3b82f6;
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ===============================
+   GLOW EFFECT
+================================ */
+
+.hero-glow {
+  position: absolute;
+  top: 200px;
+  right: 100px;
+  width: 300px;
+  height: 300px;
+  background: rgba(59, 130, 246, 0.25);
+  border-radius: 50%;
+  filter: blur(120px);
+  z-index: 0;
+}
+/* ===============================
+   RESPONSIVE BREAKPOINTS
+================================ */
+
+/* Large Desktop */
+@media (min-width: 1440px) {
+  .hero-heading {
+    font-size: 5rem;
+  }
+
+  .hero-container {
+    padding: 100px 24px;
+  }
+}
+
+/* Laptop */
+@media (max-width: 1200px) {
+  .hero-heading {
+    font-size: 3.8rem;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: auto;
+    padding: 80px 0;
+  }
+
+  .hero-heading {
+    font-size: 2.4rem;
+    line-height: 1.15;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-buttons {
+    margin-top: 24px;
+  }
+
+  .hero-glow {
+    display: none;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .hero-heading {
+    font-size: 2.1rem;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+}
+
+/* Extra Small (360px phones) */
+@media (max-width: 360px) {
+  .hero-heading {
+    font-size: 1.9rem;
+  }
+}

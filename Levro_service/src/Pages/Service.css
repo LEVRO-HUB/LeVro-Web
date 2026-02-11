@@ -7,8 +7,8 @@
 
 .services-hero {
   position: relative;
-  max-width: 1200px;
-  margin: 80px auto;
+  max-width: 100%;
+  margin: 32px 16px;
   padding: 72px 40px;
   text-align: center;
 
@@ -28,14 +28,14 @@
   letter-spacing: -0.02em;
 }
 
-.services-pills {
+.servicepills {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 18px;
 }
 
-.services-pills button {
+.servicepills button {
   position: relative;
   overflow: hidden;
   
@@ -55,7 +55,7 @@
     color 0.25s ease;
 }
 
-.services-pills button::before {
+.servicepills button::before {
   content: "";
   position: absolute;
   top: 0;
@@ -76,18 +76,18 @@
 }
 
 
-.services-pills button:hover::before {
+.servicepills button:hover::before {
   left: 120%;
 }
 
-.services-pills button:hover {
+.servicepills button:hover {
   transform: translateY(-4px);
   box-shadow: 0 16px 40px rgba(255, 120, 0, 0.35);
   color: #ff6a00;
 }
 
 
-.services-pills button.active {
+.servicepills button.active {
   background: linear-gradient(135deg, #ff8a00, #ff3d00);
   color: #ffffff;
   border: none;
@@ -100,7 +100,7 @@
 
 .service-block {
   max-width: 1100px;
-  margin: 0 auto 100px;
+  margin: 0 auto 80px;
   text-align: center;
 }
 
@@ -136,7 +136,6 @@
   height: 280px;
   border-radius: 22px;
   overflow: hidden;
-
   transform: none;
   box-shadow: 0 60px 120px rgba(0,0,0,0.35);
 
@@ -150,6 +149,73 @@
   display: block;
 }
 
+/* ===============================
+   CTO SECTION
+================================ */
+
+.cto-section {
+  margin: 60px auto;
+  padding: 60px 32px;
+  max-width: 1200px;
+  border-radius: 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cto-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+
+.cto-avatar img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #3b82f6;
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.6);
+}
+
+.cto-label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #38bdf8;
+  font-weight: 600;
+}
+
+.cto-quote {
+  margin-top: 12px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: rgb(0, 0, 0);
+}
+
+.cto-quote span {
+  background: linear-gradient(90deg, #3b82f6, #00d4ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Glow effect */
+.cto-section::before {
+  content: "";
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 300px;
+  height: 300px;
+  background: rgba(59, 130, 246, 0.3);
+  border-radius: 50%;
+  filter: blur(120px);
+  z-index: 0;
+}
+
 .dual-feature {
   margin: 40px auto; 
   padding: 80px 56px;
@@ -159,10 +225,10 @@
   gap: 48px;
   align-items: start;
 
-  background: #ffffff;   /* clean bg */
+  background: #ffffff;
   color: #000000;
-  border-radius: 0;      /* no card rounding */
-  box-shadow: none;      /* no card shadow */
+  border-radius: 0;
+  box-shadow: none;
 }
 
 
@@ -213,95 +279,6 @@
     0 12px 28px rgba(0,0,0,0.16);
 }
 
-.services-cta {
-  max-width: 1200px;
-  margin: 100px auto;
-  padding: 72px 40px;
-  text-align: center;
-
-  background: url("../assets/Images/gif10.gif") center / cover no-repeat;
-
-  border-radius: 32px;
-  color: #ffffff; 
-  font-weight: 500;
-
-  box-shadow:
-    0 40px 100px rgba(15, 45, 58, 0.18);
-}
-
-.services-cta h2 {
-  font-size: 3rem;
-  margin-bottom: 16px;
-  color: #ffffff; 
-  font-weight: 800;
-  letter-spacing: -0.02em;
-}
-
-.services-cta .highlight {
-  color: #ff8a00;
-  background: linear-gradient(135deg, #ff8a00, #ff6a00);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 900;
-
-  text-shadow:
-    0 0 10px rgba(255,138,0,0.4),
-    0 0 20px rgba(255,106,0,0.25);
-}
-
-.services-cta p {
-  max-width: 680px;
-  margin: 0 auto 48px;
-  font-size: 1rem;
-  line-height: 1.7;
-  color: #ffffff; 
-  margin-bottom: 36px;
-  font-size: larger;
-  font-weight: 700;
-}
-
-.cta-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.cta-primary,
-.cta-secondary {
-  padding: 16px 32px;
-  font-size: 1rem;
-  border-radius: 999px;
-  cursor: pointer;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.cta-primary {
-  background: linear-gradient(135deg, #ff8a00, #ff6a00);
-  color: #ffffff;
-  border: none;
-
-  box-shadow: 0 16px 40px rgba(255, 138, 0, 0.35);
-}
-
-.cta-secondary {
-  background: transparent;
-  color: #ffffff;
-  border: 2px solid rgb(255, 255, 255);
-}
-
-.cta-primary:hover {
-  transform: translateY(-4px) scale(1.03);
-  box-shadow: 0 22px 55px rgba(255, 138, 0, 0.45);
-}
-
-.cta-secondary:hover {
-  transform: translateY(-4px);
-  background: rgba(11, 42, 58, 0.05);
-}
-
-
 .services-faq {
   max-width: 1000px;
   margin: 100px auto;
@@ -338,8 +315,6 @@
 }
 
 .faq-item:hover {
-  transform: translateY(-12px);
-
   box-shadow:
     0 25px 50px rgba(0,0,0,0.12),
     0 0 20px rgba(53, 134, 255, 0.35),
@@ -361,6 +336,34 @@
   opacity: 0.75;
   line-height: 1.6;
 }
+.faq-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.faq-icon {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #3586ff;
+  transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(180deg);
+}
+
+.faq-item p {
+  margin-top: 12px;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 /* ===============================
    SERVICES – MOBILE RESPONSIVE
 ================================ */
@@ -427,35 +430,39 @@
   .service-block h2 {
     font-size: 2rem;
   }
-  
-.service-block h2,
-.service-block p,
-.linear-card {
-  will-change: transform, opacity;
-}
+  .servicepills {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
 
-  /* LINEAR STACK → COLUMN */
+  .servicepills button {
+    width: 100%;
+    min-width: unset;   /* important */
+  }
+
   .linear-stack {
-    flex-direction: column;
-    align-items: center;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 16px;
     margin-top: 56px;
+    padding-left: 16px;
+    scroll-snap-type: x mandatory;
   }
 
   .linear-card {
-    width: 100%;
-    max-width: 100%;
+    min-width: 85%;
     height: auto;
     aspect-ratio: 3 / 2;
+    flex-shrink: 0;
+    scroll-snap-align: start;
   }
 
-  /* CTA */
-  .services-cta {
-    margin: 64px 16px;
-    padding: 56px 24px;
-  }
-
-  .services-cta h2 {
-    font-size: clamp(2rem, 6vw, 2.4rem);
+  .linear-stack::-webkit-scrollbar {
+    display: none;
   }
 
   /* FAQ */
@@ -467,20 +474,118 @@
     font-size: 2.2rem;
   }
 }
-
-/* -------- SMALL MOBILE -------- */
-@media (max-width: 480px) {
+@media (max-width: 380px) {
 
   .services-hero {
-    padding: 40px 20px;
+    padding: 36px 16px;
   }
 
-  .services-pills button {
-    padding: 12px 20px;
-    font-size: 0.85rem;
+  .services-hero h1 {
+    font-size: 1.8rem;
   }
 
-  .services-cta p {
-    font-size: 1rem;
+  .servicepills {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
   }
+
+  .servicepills button {
+    padding: 10px 18px;
+    font-size: 0.8rem;
+  }
+
+  .linear-card {
+    min-width: 92%;
+  }
+
+}
+/* ===============================
+   CTO MINI CARD – ATTACHED AVATAR
+================================ */
+
+.cto-mini {
+  margin: 40px auto 60px auto;
+  display: flex;
+  justify-content: center;
+}
+
+.cto-mini-card {
+  position: relative;
+  max-width: 520px;
+  background: #ffffff;
+  padding: 40px 32px 32px 32px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+/* Avatar attached top-left */
+.cto-mini-avatar {
+  position: absolute;
+  top: -30px;
+  left: -30px;
+}
+
+.cto-mini-avatar img {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #3b82f6;
+  background: white;
+  box-shadow: 0 10px 30px rgba(59,130,246,0.4);
+}
+
+.cto-mini-label {
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #3b82f6;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.cto-mini-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #111827;
+}
+
+/* ===============================
+   CTO MINI – MOBILE FIX
+================================ */
+@media (max-width: 768px) {
+
+  .cto-mini {
+    margin: 40px 16px;   /* reduce side gap */
+  }
+
+  .cto-mini-card {
+    max-width: 100%;
+    padding: 32px 20px 24px 20px;
+    border-radius: 18px;
+  }
+
+  .cto-mini-avatar {
+    top: -25px;
+    left: 16px;   /* move inside instead of outside */
+  }
+
+  .cto-mini-avatar img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .cto-mini-label {
+    font-size: 0.7rem;
+  }
+
+  .cto-mini-card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
 }

@@ -4,27 +4,10 @@
   min-height: 100vh;
   background: #f4f6f9;
   box-sizing: border-box;
-  padding-top: 80px; /* adjust to navbar height */
+  /* padding-top: 80px; */
   font-family: Arial, Helvetica, sans-serif; /* global font */
 }
 
-/* Top banner wrapper */ 
-.top-banner { 
-  padding: 72px 24px 80px; 
-  color: #ffffff;
-
-  max-width: 1280px;       
-  margin: 40px auto 0;     
-  border-radius: 28px;      
-  display: flex; 
-  justify-content: center; 
-  align-items: center; 
-  text-align: center; 
-  background: url("../assets/Images/blue.jpg") center / cover no-repeat;
-  padding: clamp(12px, 4vw, 24px); 
-  box-sizing: border-box;  
-  background-color: rgba(0,0,0,0.6); /* overlay for readability */ 
-}
 /* Inner content */ 
 .banner-content { max-width: 900px; color: #fff; }
 
@@ -502,9 +485,44 @@ banner-tagline { font-size: clamp(0.9rem, 2.5vw, 1.2rem); line-height: 1.4; marg
   width: 100%;
 }
 
-/* ===== RESPONSIVE ===== */
+/* ===============================
+   CONTACT – MOBILE OPTIMIZED
+================================ */
 @media (max-width: 900px) {
+
   .contact-flex {
     flex-direction: column;
+    gap: 12px;
+    margin: 20px auto;
   }
+
+  .contact-left,
+  .contact-right {
+    width: 100%;
+    margin: 0;
+  }
+
+  /* Center left section */
+  .contact-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Keep accordion clean width */
+  .contact-left .accordion,
+  .contact-left .reach-options {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  /* Remove extra left padding */
+  .accordion-item,
+  .reach-option-item {
+    padding-left: 0;
+  }
+
 }
+
+

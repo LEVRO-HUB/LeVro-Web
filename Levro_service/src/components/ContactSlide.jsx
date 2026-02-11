@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./ContactSlide.css";
 
-import con1 from "../assets/Images/slidee1.jpg";
-import con2 from "../assets/Images/slidee2.jpg";
-import con3 from "../assets/Images/slidee3.jpg";
+import con1 from "../assets/Images/con1.png";
+import con2 from "../assets/Images/con2.png";
+import con3 from "../assets/Images/con3.png";
 
 const ContactSlide = () => {
   const images = [con1, con2, con3];
@@ -12,26 +12,28 @@ const ContactSlide = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setIndex((prev) => (prev + 1) % images.length);
-    }, 7000)   ; // every 3 seconds
+    }, 2500)   ; // every 3 seconds
     return () => clearInterval(timer);
   }, [images.length]);
 
   return (
     <div className="contact-slide">
-      <div className="slide-wrapper">
-        <img
-          src={images[index]}
-          alt={`Slide ${index}`}
-          className="slide-img"
-          key={index} // forces re-render for animation
-        />
+      <div className="slide-viewport">
+        <div
+          className="slide-track"
+          style={{ transform: `translateX(-${index * 100}%)` }}
+        >
+          {images.map((img, i) => (
+            <div className="slide-wrapper" key={i}>
+              <img
+                src={img}
+                alt={`Slide ${i}`}
+                className="slide-img"
+              />
+            </div>
+          ))}
+        </div>
       </div>
-      <p className="slide-paragraph">
-        Levro is committed to delivering innovative IT solutions that blend
-        design elegance with technical precision. Our team thrives on
-        collaboration and transparency, ensuring every project meets client
-        expectations.
-      </p>
     </div>
   );
 };

@@ -1,27 +1,38 @@
-import heroImg from "../assets/Images/Banner.jpg"
-import Navbar from "../components/Navbar";
+import tharun from "../assets/Images/Members/tharun.jpeg";
+import "./Home.css";
+
 const Home = () => {
   return (
+    <section className="relative bg-linear-to-br from-slate-950 via-slate-900 to-slate-800 text-white flex items-center md:min-h-screen">
 
-    <section className="min-h-screen bg-linear-to-br from-slate-950 via-slate-900 to-slate-800 text-white flex items-center">
-      {/* <Navbar /> */}
-      <div className="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div className="max-w-7xl mx-auto px-6 py-16 md:py-24">
 
-        {/* LEFT CONTENT */}
-        <div>
-          <h1 className="text-4xl md:text-5xl xl:text-6xl font-bold leading-tight">
-            Building Scalable <br />
-            <span className="text-blue-500">Digital Solutions</span> <br />
-            for Modern Businesses
+        {/* HERO CONTENT */}
+        <div className="max-w-3xl">
+
+          {/* Premium Heading */}
+          <h1 className="hero-heading">
+            <span className="line-1">Building Scalable</span>
+            <span className="line-2">Digital Solutions</span>
+            <span className="line-3">for Modern Businesses</span>
           </h1>
 
-          <p className="mt-6 text-slate-300 max-w-xl">
-            Levro Technologies helps businesses grow through custom websites,
-            ERP software, and mobile applications engineered for performance,
-            security, and scalability.
-          </p>
+          {/* CEO Mini Message */}
+          <div className="leader-note">
+            <div className="leader-avatar">
+              <img src={tharun} alt="CEO" />
+            </div>
 
-          <div className="mt-8 flex gap-4">
+            <div className="leader-message">
+              <span className="leader-title">Tharun Devakumar / CEO</span>
+              <p>
+                At Levro, we believe building scalable digital systems is the foundation for long-term business growth.
+              </p>
+            </div>
+          </div>
+
+          {/* Buttons */}
+          <div className="mt-8 flex flex-wrap gap-4">
             <button className="bg-amber-500 hover:bg-amber-600 text-black font-semibold px-6 py-3 rounded-lg transition">
               Get Started
             </button>
@@ -30,23 +41,14 @@ const Home = () => {
               View Services
             </button>
           </div>
+
         </div>
-
-        {/* RIGHT VISUAL */}
-        <div className="relative flex justify-center md:justify-end">
-  <img
-    src={heroImg}
-    alt="Technology Illustration"
-    className="w-full max-w-md rounded-2xl shadow-2xl ring-1 ring-white/10"
-  />
-
-  {/* Soft glow */}
-  <div className="absolute w-80 h-80 bg-blue-500/20 rounded-full blur-[120px] -z-10"></div>
-</div>
       </div>
-      
+
+      {/* Soft Glow Background */}
+      <div className="absolute top-40 right-10 w-72 h-72 bg-blue-500/20 rounded-full blur-[120px] -z-10"></div>
+
     </section>
-    
   );
 };
 
