@@ -2,7 +2,7 @@ import "./Service.css";
 import Slideshow from "../components/Slideshow";
 import { useEffect, useState } from "react";
 import { gsap } from "gsap";
-import sepal from "../assets/Images/Members/sepal.png";
+import sepal from "../assets/Images/Members/sepal.jpeg";
 import img1 from "../assets/Images/img1.png";
 import img2 from "../assets/Images/img2.png";
 import img9 from "../assets/Images/img11.jfif";
