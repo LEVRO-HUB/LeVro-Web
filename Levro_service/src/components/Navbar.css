@@ -6,8 +6,9 @@
 }
 
 /* ================= PILL ================= */
+
 .navbar-pill {
-  height: 60px; /* 🔒 fixed height */
+  height: 65px; /* 🔒 fixed height */
   width: 100%;
 
   background: #1e293b; /* slate-800 */
@@ -17,18 +18,33 @@
   align-items: center;
   justify-content: space-between;
 
-  padding: 0 20px;
+  /* remove left padding so logo sits flush with viewport edge */
+  padding: 0 20px 0 0;
 
   flex-wrap: nowrap; /* ❗ NEVER WRAP */
 }
 
 /* ================= LOGO ================= */
+/* keep other logo text styles if needed
 .navbar-logo {
-  font-size: 1.1rem;
-  font-weight: 700;
+  font-size: 0.5rem;
+  font-weight: 400;
   color: #ffffff;
   letter-spacing: 1px;
   white-space: nowrap;
+}*/
+
+.logo {
+  /* in combination with navbar-pill padding-left:0, ensures other items stay right */
+  margin-right: auto;
+}
+
+.logo img {
+  /* constrain inside the 60px navbar height */
+  height: 200px; /* adjust as necessary */
+  max-height: 100%;
+  width: auto;         /* preserve aspect ratio */
+  display: block;
 }
 
 /* ================= LINKS ================= */
@@ -39,7 +55,7 @@
   gap: 6px;
 
   margin: 0;
-  padding: 0;
+  padding: 30px;
 }
 
 /* ================= BUTTONS / LINKS ================= */
@@ -101,6 +117,15 @@
   .hamburger {
     display: flex;
   }
+
+  .logo img {
+  /* constrain inside the 60px navbar height */
+  height: 120px; /* adjust as necessary */
+  max-height: 100%;
+  width: auto;         /* preserve aspect ratio */
+  display: block;
+}
+
 
   .navbar-links {
     position: absolute;

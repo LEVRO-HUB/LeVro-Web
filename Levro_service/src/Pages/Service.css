@@ -12,7 +12,7 @@
   padding: 72px 40px;
   text-align: center;
 
-  background: url("../assets/Images/gif1.gif") center / cover no-repeat;
+  background: linear-gradient(135deg, #21294e, #25314e, #3e4b61);
 
   border-radius: 28px;
 
@@ -20,11 +20,12 @@
     0 30px 80px rgba(15, 45, 58, 0.18);
 }
 
-.services-hero h1 {
+.services-hero h2 {
   font-size: clamp(2.6rem, 5vw, 3.2rem);
   margin-bottom: 24px;
-  color: #0b2a3a; 
-  font-weight: 800;
+  color: #fefefe; 
+  font-weight: 700;
+  font-size: 2.1rem;
   letter-spacing: -0.02em;
 }
 
@@ -66,13 +67,13 @@
   background: linear-gradient(
     120deg,
     transparent,
-    rgba(255, 120, 0, 0.7),
-    rgba(255, 60, 0, 0.9),
+    rgb(0, 162, 255),
+    rgb(30, 65, 86),
     transparent
   );
 
   transform: skewX(-20deg);
-  transition: left 0.6s ease;
+  transition: left 0.8s ease;
 }
 
 
@@ -82,8 +83,8 @@
 
 .servicepills button:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 40px rgba(255, 120, 0, 0.35);
-  color: #ff6a00;
+  box-shadow: 0 16px 40px rgba(21, 28, 79, 0.35);
+  color: #009dff;
 }
 
 
@@ -93,8 +94,8 @@
   border: none;
 
   box-shadow:
-    0 0 20px rgba(255, 120, 0, 0.6),
-    0 0 40px rgba(255, 60, 0, 0.4);
+    0 0 20px rgba(46, 87, 122, 0.6),
+    0 0 40px rgba(30, 64, 94, 0.4);
 }
 
 
@@ -104,7 +105,7 @@
   text-align: center;
 }
 
-.service-block h2 {
+.service-block h3 {
   font-size: 2.5rem;
   margin-bottom: 12px;
 }
@@ -243,7 +244,7 @@
 }
 
 
-.feature-column h2 {
+.feature-column h3 {
   font-size: clamp(32px, 4vw, 42px);
   font-weight: 800;
   margin-bottom: 16px;
@@ -285,13 +286,15 @@
   padding: 0 24px;
 }
 
-.services-faq h2 {
+.services-faq h3 {
   text-align: center;
   font-size: 2.8rem;
   font-weight: bolder;
   margin-bottom: 60px;
 }
-
+.services-faq h4{
+  font-size: 1.1rem;
+}
 .services-faq .highlight{
   color: rgb(0, 162, 255);
   text-shadow: 0 2px 6px rgba(77, 163, 255, 0.4);
@@ -323,7 +326,7 @@
 
 
 .faq-item h4 {
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin-bottom: 10px;
   transition: color 0.3s ease;
 }
@@ -333,6 +336,7 @@
 }
 
 .faq-item p {
+  font-size: 0.95rem;
   opacity: 0.75;
   line-height: 1.6;
 }
@@ -427,12 +431,12 @@
     margin-bottom: 72px;
   }
 
-  .service-block h2 {
+  .service-block h3 {
     font-size: 2rem;
   }
   .servicepills {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 16px;
     max-width: 400px;
     margin: 0 auto;
@@ -470,7 +474,7 @@
     margin: 72px auto;
   }
 
-  .services-faq h2 {
+  .services-faq h3 {
     font-size: 2.2rem;
   }
 }
