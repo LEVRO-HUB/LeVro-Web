@@ -29,11 +29,11 @@ export default function About() {
   /* ---------- DATA FIRST ---------- */
   const STORY_CONTENT = [
     {
-      quote: "We don’t just ship features — we build clarity. Every pixel and every line of code is made to earn trust.",
+      quote: "Your growth is our success — we don’t just build solutions, we build lasting partnerships.",
       steps: [
-        { no: "01", title: "Start with the real problem", text: "We listen first — understanding users, goals, and constraints before we design anything." },
-        { no: "02", title: "Design for speed & simplicity", text: "Clean UI, clean flows. We remove friction so your product feels effortless to use." },
-        { no: "03", title: "Engineer to scale", text: "Reliable architecture, secure foundations, and performance that holds up when you grow." }
+        { no: "01", title: "Growing Together With Purpose", text: "At Levro Technologies, we believe growth is never one-sided. When you grow, we grow. Every project we take on is more than just development work — it’s a partnership built on trust, clarity, and long-term vision." },
+        { no: "02", title: "Built on Understanding and Trust", text: "We started with a simple belief: businesses deserve digital solutions that truly support their goals. Too often, companies struggle with complex systems, poor communication, and services that feel disconnected from their real needs. We chose a different path — one focused on understanding first, building thoughtfully, and delivering consistently." },
+        { no: "03", title: "Digital Solutions That Drive Real Results", text: "From web development and SEO optimization to scalable backend systems and custom applications, our mission is to create digital platforms that help you get noticed, generate leads, and build lasting impact." }
       ]
     }
   ];
@@ -97,20 +97,19 @@ export default function About() {
 
           <div className="story-label">
             <span className="bar"></span>
-            <span className="text">Levro Technologies</span>
+            <span className="text">Levrotec Technologies</span>
           </div>
 
           <h1 className="hero-title">
-            <span>Your Vision</span>
-            <span>Our Expertise</span>
+            <span>About Levrotec Technologies </span>
             <span className="accent">
-              Get Noticed.<br />Generate Leads.
+              Digital Solutions &<br />Web Development Experts
             </span>
           </h1>
 
           <p className="hero-sub">
-            We help brands design, build, and scale digital products
-            that people trust and businesses rely on.
+            Levro Technologies is a results-driven digital solutions company specializing in web development, SEO optimization, 
+            and scalable web applications for businesses worldwide. We help brands design, build, and grow high-performance digital platforms that generate measurable results.
           </p>
 
         </div>
@@ -226,43 +225,43 @@ export default function About() {
 
       {/* ================= WHY LEVRO ================= */}
       <section className="why-section fade-up">
-        <h2>Strategic <span className="highlight">Digital Solutions</span></h2>
+        <h2>Strategic Digital Solutions by<span className="highlight"> Levro Technologies</span></h2>
         <div className="why-grid">
 
           <div className="why-item">
             <div className="why-icon"><img src={right} className="why-icon" alt="Easy setup" /></div>
-            <h4>EASY SET UP</h4>
-            <p>Your team works from our headquarters and is ready to go within weeks.</p>
+            <h4>FAST & EFFICIENT PROJECT ONBOARDING</h4>
+            <p>Our structured onboarding process ensures rapid project setup, streamlined planning, and efficient execution for web development and SEO projects.</p>
           </div>
 
           <div className="why-item">
             <div className="why-icon"><img src={user} className="why-icon" alt="Easy setup" /></div>
-            <h4>SCALEABLE</h4>
-            <p>Start nimble and grow your team as your company does.</p>
+            <h4>SCALABLE DIGITAL ARCHITECTURE</h4>
+            <p>We build scalable web applications and backend systems designed to grow with your business and support increasing traffic and operational demands.</p>
           </div>
 
           <div className="why-item">
             <div className="why-icon"><img src={top} className="why-icon" alt="Easy setup" /></div>
-            <h4>TOP TALENT</h4>
-            <p>4 years of experience and a large network of Tech professionals.</p>
+            <h4>EXPERIENCED WEB & SEO SPECIALISTS</h4>
+            <p>Our team of skilled developers and SEO strategists brings industry expertise in building high-performance websites and data-driven digital growth strategies.</p>
           </div>
 
           <div className="why-item">
             <div className="why-icon"><img src={clock} className="why-icon" alt="Easy setup" /></div>
-            <h4>SAME TIME ZONE</h4>
-            <p>We share your office hours for smooth collaboration.</p>
+            <h4>SEAMLESS GLOBAL COLLABORATION</h4>
+            <p>We work with international clients across multiple time zones, ensuring transparent communication and consistent project updates.</p>
           </div>
 
           <div className="why-item">
             <div className="why-icon"><img src={office} className="why-icon" alt="Easy setup" /></div>
-            <h4>SOLID INFRASTRUCTURE</h4>
-            <p>Modern office space with reliable connectivity.</p>
+            <h4>ENTERPRISE-GRADE INFRASTRUCTURE</h4>
+            <p>Our development environment includes secure hosting, optimized servers, cloud integration, and performance monitoring for reliable digital solutions.</p>
           </div>
 
           <div className="why-item">
             <div className="why-icon"><img src={smile} className="why-icon" alt="Easy setup" /></div>
-            <h4>YOUR CULTURE</h4>
-            <p>Your team becomes an extension of your company and values.</p>
+            <h4>CLIENT-CENTRIC DEVELOPMENT APPROACH</h4>
+            <p>We align with your business goals and brand values to deliver custom digital solutions that reflect your vision and market positioning.</p>
           </div>
 
         </div>
@@ -308,9 +307,7 @@ export default function About() {
             {/* MAIN GLASS CARD */}
             <div className="story-glass-card">
               <p>
-                Levro started from a problem we experienced ourselves — good ideas slowed
-                down by complex tools and unclear systems. We chose a different path:
-                clean design, strong engineering, and reliable scale.
+                Your success is our success. That’s why we focus on long-term collaboration, scalable solutions, and performance-driven results. Whether you are launching a startup or expanding an established brand, we stand beside you as a trusted digital partner.
               </p>
             </div>
 

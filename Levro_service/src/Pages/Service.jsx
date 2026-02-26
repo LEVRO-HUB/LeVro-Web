@@ -26,24 +26,29 @@ function Service() {
 
   const faqs = [
     {
-      question: "How long does it take to build a project?",
+      question: "What is included in your web development services?",
       answer:
-        "Timelines depend on the project scope, but most projects are completed within 4-8 weeks, with regular updates along the way.",
+        "Our web development services include responsive website design, frontend and backend development, performance optimization, SEO-ready architecture, secure hosting setup, and scalable web application development tailored to business goals.",
     },
     {
-      question: "Do you provide post-launch support?",
+      question: "Do you build SEO-friendly websites?",
       answer:
-        "Yes. We provide ongoing support, maintenance, and scaling after launch to keep everything running smoothly.",
+        "Yes. Every website we develop is built with SEO best practices, including clean URL structure, optimized heading hierarchy, fast loading speed, mobile-first design, structured data markup, and search engine–friendly coding standards.",
     },
     {
-      question: "Can you work with existing systems?",
+      question: "What is SEO optimization and why is it important?",
       answer:
-        "Absolutely. We integrate with your existing tools and systems without disrupting your workflow.",
+        "SEO optimization is the process of improving a website’s visibility in search engines through technical improvements, keyword targeting, content strategy, and link building. Effective SEO helps businesses increase organic traffic, generate qualified leads, and achieve long-term digital growth.",
     },
     {
-      question: "Is my data secure?",
+      question: "How long does SEO take to show results?",
       answer:
-        "Yes. Data security is a priority, and we follow industry-standard practices to protect your information.",
+        "SEO is a long-term strategy. Most businesses begin seeing measurable improvements in rankings and traffic within 3–6 months, depending on competition, industry, and current website performance.",
+    },
+    {
+      question: "Can you provide both web development and SEO services together?",
+      answer:
+        "Absolutely. Levrotec Technologies offers integrated web development and SEO optimization services, ensuring your website is built for performance, scalability, and high search engine visibility from day one.",
     },
   ];
 
@@ -70,7 +75,7 @@ function Service() {
             ease: "power3.out",
           });
         } else {
-          const heading = section.querySelector("h2");
+          const heading = section.querySelector("h3");
           const text = section.querySelector("p");
           const cards = section.querySelectorAll(".linear-card");
 
@@ -120,7 +125,7 @@ function Service() {
           y: 40,
         });
       } else {
-        gsap.set(section.querySelectorAll("h2, p, .linear-card"), {
+        gsap.set(section.querySelectorAll("h3, p, .linear-card"), {
           opacity: 0,
           y: 40,
           scale: 0.95,
@@ -136,14 +141,14 @@ function Service() {
   return (
     <div className="services-container">
       <section className="services-hero">
-        <h1><button id="heading">VALUE-ADDED SERVICES</button></h1>
+        <h2><button id="heading">PROFESSIONAL WEB DEVELOPMENT & STRATEGIC SEO SERVICES</button></h2>
 
         <div className="servicepills">
-          <button onClick={() => scrollTo("web")}>Web Development</button>
-          <button onClick={() => scrollTo("uiux")}>UI / UX Design</button>
-          <button onClick={() => scrollTo("backend")}>Backend Services</button>
-          <button onClick={() => scrollTo("erp")}>ERP Solutions</button>
-          <button onClick={() => scrollTo("backend")}>Custom Apps</button>
+          <button onClick={() => scrollTo("web")}>Web Development Services</button>
+          <button onClick={() => scrollTo("uiux")}>UI/UX Design Solutions</button>
+          <button onClick={() => scrollTo("backend")}>Backend Development Services</button>
+          <button onClick={() => scrollTo("erp")}>ERP Software Solutions</button>
+          <button onClick={() => scrollTo("backend")}>Custom Web & Mobile Applications</button>
         </div>
       </section>
 
@@ -163,9 +168,9 @@ function Service() {
       </section>
         
     <section id="web" className="service-block">
-      <h2>How does <span className="highlight">Web Development</span> help your business?</h2>
+      <h3>How Professional <span className="highlight">Web Development Drives</span>Business Growth</h3>
       <p>
-        We build high-performance, scalable websites that strengthen your brand presence, attract and retain customers, and support business growth through speed, reliability, and modern design.
+        We build high-performance, scalable websites that enhance brand visibility, improve user experience, increase conversions, and support long-term digital growth through speed, security, and modern architecture.
       </p>
       <div className="linear-stack">
         <div className="linear-card">
@@ -181,8 +186,8 @@ function Service() {
     </section>
  
       <section id="uiux" className="service-block">
-        <h2>How can <span className="highlight">UI/UX</span> design That Turns Visitors Into Loyal Customers?</h2>
-        <p>We design intuitive, user-centric interfaces that enhance usability, build trust, and keep users engaged—driving long-term loyalty.</p>
+        <h3><span className="highlight">UI/UX</span> Design Services That Turn Visitors into Loyal Customers</h3>
+        <p>Levrotec Technologies delivers professional UI/UX design services focused on creating intuitive, user-centered digital experiences that increase engagement, reduce bounce rates, and drive higher conversion rates. Our responsive interface design ensures seamless performance across web and mobile platforms, helping businesses build trust and long-term customer loyalty.</p>
         <div className="linear-stack">
           <div className="linear-card">
             <img src={gif6} alt="Preview 1" />
@@ -197,15 +202,15 @@ function Service() {
       </section>
 
       <section id="erp" className="service-block">
-        <h2>How do <span className="highlight">ERP Solutions</span> streamline your entire business?</h2>
-        <p>Our ERP solutions unify all your core business processes into a single, integrated system, improving operational efficiency, real-time visibility, and decision-making across departments.</p>
+        <h3>Enterprise <span className="highlight">ERP Solutions</span> for Integrated Business Management</h3>
+        <p>Our custom ERP development services integrate finance, inventory, HR, sales, and operations into a unified platform, enabling businesses to automate processes, improve efficiency, and scale with confidence in competitive global markets.</p>
         <Slideshow /> 
       </section>
 
       <section id="backend" className="service-block">
         <div className="dual-feature">
           <div className="feature-column">
-            <h2>Backend Services</h2>
+            <h3>Backend Services</h3>
             <p>
               We build secure, scalable backend architectures that ensure smooth
               operations, fast performance, and reliable data flow across all systems.
@@ -219,7 +224,7 @@ function Service() {
           <div className="feature-divider" />
 
           <div className="feature-column">
-            <h2>App Development</h2>
+            <h3>App Development</h3>
             <p>
               Our mobile and web applications streamline workflows, enhance user
               experience, and help teams operate efficiently while supporting growth.
@@ -232,9 +237,9 @@ function Service() {
         </section>
 
         <section className="services-faq">
-          <h2>
-            Frequently <span className="highlight">Asked Questions</span>
-          </h2>
+          <h3>
+            Frequently Asked Questions About<span className="highlight"> Web Development & SEO Optimization</span>
+          </h3>
 
           <div className="faq-list">
             {faqs.map((faq, index) => (

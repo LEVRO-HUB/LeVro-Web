@@ -23,7 +23,7 @@ export default function InfoSection() {
         </div>
         <h3>CALL US</h3>
         <p>Building technology that connects people, drives progress, and shapes the future.</p>
-        <p>+91 7530094591</p>
+        <p>+91 9884661885</p>
       </div>
 
       <div className="info-card">
@@ -31,8 +31,8 @@ export default function InfoSection() {
           <img src={emailIcon} alt="Email Us" />
         </div>
         <h3>EMAIL US</h3>
-        <p>For any queries or support, please reach out to us at noreply@levro.com</p>
-        <p>noreply@levro.com</p>
+        <p>For any queries or support, please reach out to us at contact.levrotec@gmail.com</p>
+        <p>contact.levrotec@gmail.com</p>
       </div>
     </div>
   );

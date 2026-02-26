@@ -3,7 +3,7 @@ import "./Home.css";
 
 const Home = () => {
   return (
-    <section className="relative bg-linear-to-br from-slate-950 via-slate-900 to-slate-800 text-white flex items-center md:min-h-screen">
+    <section className="relative bg-linear-to-br from-slate-950 via-slate-900 to-slate-800 text-white flex items-center md:min-h-screen pt-0" >
 
       <div className="max-w-7xl mx-auto px-6 py-16 md:py-24">
 
@@ -12,9 +12,9 @@ const Home = () => {
 
           {/* Premium Heading */}
           <h1 className="hero-heading">
-            <span className="line-1">Building Scalable</span>
-            <span className="line-2">Digital Solutions</span>
-            <span className="line-3">for Modern Businesses</span>
+            <span className="line-1">Digital Solutions & </span>
+            <span className="line-2">High-Performance Web Development</span>
+            <span className="line-3">for Global Businesses</span>
           </h1>
 
           {/* CEO Mini Message */}

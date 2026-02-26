@@ -10,6 +10,31 @@ import hari from "../assets/Images/Members/hari.png";
 
 
 const ContactUs = () => {
+  const handleWhatsAppSubmit = (e) => {
+  e.preventDefault();
+
+  const form = e.target;
+  const firstName = form[0].value;
+  const lastName = form[1].value;
+  const email = form[2].value;
+  const jobTitle = form[3].value;
+  const company = form[4].value;
+  const country = form[5].value;
+  const message = form[6].value;
+
+  const whatsappMessage = `Hello Levro Team,
+  
+Name: ${firstName} ${lastName}
+Email: ${email}
+Job Title: ${jobTitle}
+Company: ${company}
+Country: ${country}
+Message: ${message}`;
+
+  const encodedMessage = encodeURIComponent(whatsappMessage);
+
+  window.open(`https://wa.me/9884661885?text=${encodedMessage}`, "_blank");
+};
   return (
     <div className="contact-us-page">
 
@@ -32,7 +57,7 @@ const ContactUs = () => {
       {/* Company Information */}
       <div className="company-info">
         <div className="top-right">
-          <h1 className="animated-heading">
+          <h2 className="animated-heading">
             {"Who We Are!".split(" ").map((word, i) => (
               <span key={i} className="word">
                 {word.split("").map((char, j) => (
@@ -40,11 +65,12 @@ const ContactUs = () => {
                 ))}
               </span>
             ))}
-          </h1>
+          </h2>
         </div>
         <p>
-          Levro is a forward‑thinking IT services startup based in Chennai, India,
-          providing innovative IT solutions for businesses worldwide.
+          Founded with a vision to empower businesses through technology, Levro Technologies combines modern development frameworks, 
+          performance-driven SEO strategies, and user-centric design to deliver scalable digital solutions. Our expertise spans custom 
+          website development, enterprise applications, backend systems, and search engine optimization services.
         </p>
       </div>
       {/* <Slideshow /> */}
@@ -61,7 +87,7 @@ const ContactUs = () => {
                   For us, it’s never just about delivering a project. It’s about building something that lasts.
                 </p><br />
                 <a
-                  href="https://wa.me/7530094591?text=Hello%20Levro%20Team%2C%20I%20would%20like%20to%20get%20in%20touch."
+                  href="https://wa.me/9884661885?text=Hello%20Levro%20Team%2C%20I%20would%20like%20to%20get%20in%20touch."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="banner-btn"
@@ -77,8 +103,8 @@ const ContactUs = () => {
       </div>
 
       <div className="contact-right">
-        <form id="contact-form" className="contact-form" action="/submit" method="POST">
-          <h2>How can we help you?</h2>
+        <form id="contact-form" className="contact-form" onSubmit={handleWhatsAppSubmit}>
+          <h3>How can we help you?</h3>
 
           <div className="form-row">
             <input type="text" placeholder="First Name" required />

@@ -15,7 +15,8 @@ footer {
   display: flex;
   text-align: center;
   /* padding-left: 70px; */
-  height: 4cm;
+  /* avoid hard-coded height so mobile stacking can grow naturally */
+  /*height: 4cm;*/
   justify-content: space-between; /* left, center, right */
   align-items: flex-start;
   flex-wrap: wrap;
@@ -28,6 +29,16 @@ footer {
 .footer-col {
   flex: 1;
   min-width: 200px;
+}
+
+/* ensure center column logo stays horizontally centered */
+.footer-center {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-center .logo {
+  margin: 0 auto;
 }
 
 .footer-col h3 {
@@ -82,6 +93,40 @@ footer p {
   font-size: 0.85em;
   margin-top: 25px;
   opacity: 0.8;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .footer-columns {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    margin: 20px auto;
+    height: auto;            /* allow height to expand with content */
+  }
+
+  .footer-col {
+    align-items: center;
+    min-width: auto;
+    width: 100%;
+    text-align: center;
+  }
+
+  .footer-col h3 {
+    font-size: 1.1em;
+  }
+
+  .footer-col ul li {
+    font-size: 0.9em;
+  }
+
+  .social-icons {
+    gap: 12px;
+  }
+
+  footer {
+    padding: 20px 10px 15px;
+  }
 }
 
 /* Waves */
