@@ -1,8 +1,17 @@
 import tharun from "../assets/Images/Members/tharun.jpeg";
 import "./Home.css";
+import { Helmet } from 'react-helmet';
 
 const Home = () => {
   return (
+  <div>
+    <Helmet>
+        <title>LEVROTEC Technologies | Web Development & SEO Optimization Services</title>
+        <meta name="description" content="Levrotec Technologies is a digital solutions company offering professional web development, SEO optimization, scalable backend systems, and custom web applications worldwide." />
+        <meta name="keywords" content="Levrotec Technologies, Web Development Services, SEO Optimization, Digital Solutions Company, Custom Web Applications" />
+        <meta name="author" content="Levrotec Technologies" />
+        <link rel="canonical" href="https://levrotec.com/" />
+    </Helmet>
     <section className="relative bg-linear-to-br from-slate-950 via-slate-900 to-slate-800 text-white flex items-center md:min-h-screen pt-0" >
 
       <div className="max-w-7xl mx-auto px-6 py-16 md:py-24">
@@ -49,6 +58,7 @@ const Home = () => {
       <div className="absolute top-40 right-10 w-72 h-72 bg-blue-500/20 rounded-full blur-[120px] -z-10"></div>
 
     </section>
+    </div>
   );
 };
 

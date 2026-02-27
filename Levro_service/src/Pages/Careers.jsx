@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Link } from "react-router-dom";
+import { Helmet } from 'react-helmet';
 
 /* ASSETS */
 import heroBg from "../assets/Images/careers-TorB.gif";
@@ -208,6 +209,21 @@ document.querySelectorAll(".magnetic").forEach((btn) => {
 
   return (
     <div className="careers-container">
+      <Helmet>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>Careers at Levro Technologies | Join Our Web Development & SEO Team</title>
+
+        <meta name="description"
+        content="Explore career opportunities at Levro Technologies. Join our team of developers, designers, and SEO specialists building scalable digital solutions and high-performance web applications." />
+
+        <meta name="keywords"
+        content="Levro Technologies Careers, Web Developer Jobs, SEO Jobs, Digital Agency Careers, Software Developer Jobs, IT Careers, Join Levro Technologies" />
+
+        <meta name="author" content="Levro Technologies" />
+        <link rel="canonical" href="https://levrotec.com/careers" />
+      </Helmet>
       {/* ================= HERO ================= */}
       <section
   className="careers-hero new-hero"
