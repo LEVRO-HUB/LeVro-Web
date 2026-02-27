@@ -1,4 +1,4 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
 import "./Navbar.css";
 import logo from "../assets/Images/logo2.png";
@@ -91,6 +91,9 @@ export default function Navbar() {
             <button type="button" onClick={() => handleScroll("contact")}>
               Contact
             </button>
+          </li>
+          <li className="careers-link">
+            <Link to="/careers">Careers</Link>
           </li>
         </ul>
       </div>
