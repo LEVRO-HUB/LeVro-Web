@@ -10,8 +10,9 @@ import Navbar from './components/Navbar';
 import ScrollToHash from "./components/ScrollToHash";
 
 
+import AboutUs from './Pages/Aboutus';
 
-function MainPage() {
+function App() {
   return ( 
     <>
       <section id="home"><Home /></section>
