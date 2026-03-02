@@ -1,114 +1,171 @@
-/* Navbar wrapper */
+/* ================= NAVBAR ================= */
 .navbar {
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 0;
-  width: 100%;
-  background: #3586ff;
-  color: #fff;
   z-index: 1000;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
-/* Container with three zones */
-.navbar-container {
+/* ================= PILL ================= */
+
+.navbar-pill {
+  height: 65px; /* 🔒 fixed height */
+  width: 100%;
+
+  background: #1e293b; /* slate-800 */
+  box-shadow: 0 6px 16px rgba(53, 134, 255, 0.35);
+
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: center;
-  padding: 15px 30px;
-  flex-wrap: wrap; /* allows wrapping on small screens */
+
+  /* remove left padding so logo sits flush with viewport edge */
+  padding: 0 20px 0 0;
+
+  flex-wrap: nowrap; /* ❗ NEVER WRAP */
 }
 
-/* Left zone */
-.navbar-left {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.navbar-icon {
-  font-size: 1.5rem;
-}
-
-/* Logo */
+/* ================= LOGO ================= */
+/* keep other logo text styles if needed
 .navbar-logo {
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-size: 0.5rem;
+  font-weight: 400;
+  color: #ffffff;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}*/
+
+.logo {
+  /* in combination with navbar-pill padding-left:0, ensures other items stay right */
+  margin-right: auto;
 }
 
-/* Center links */
+.logo img {
+  /* constrain inside the 60px navbar height */
+  height: 200px; /* adjust as necessary */
+  max-height: 100%;
+  width: auto;         /* preserve aspect ratio */
+  display: block;
+}
+
+/* ================= LINKS ================= */
 .navbar-links {
   list-style: none;
   display: flex;
-  gap: 20px;
-  margin: 0;
-  padding: 0;
-}
-
-.navbar-links li a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-  padding: 8px 16px;
-  border-radius: 6px;
-  transition: background 0.3s ease;
-}
-
-.navbar-links li a:hover {
-  background: #0078d7;
-}
-
-/* Right zone */
-.navbar-right {
-  display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 6px;
+
+  margin: 0;
+  padding: 30px;
 }
 
-.lang-btn {
-  background: #0078d7;
+/* ================= BUTTONS / LINKS ================= */
+.navbar-links li a,
+.navbar-links li button {
+  background: transparent;
   border: none;
-  padding: 8px 12px;
-  border-radius: 6px;
-  color: #fff;
   cursor: pointer;
-  transition: background 0.3s ease;
+
+  color: #ffffff;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border-radius: 999px;
+  white-space: nowrap;
+
+  transition: 0.25s ease;
 }
 
-.lang-btn:hover {
-  background: #005fa3;
+.navbar-links li a:hover,
+.navbar-links li button:hover {
+  background: #ffffff;
+  color: #3586ff;
 }
 
-/* Mobile toggle button */
-.menu-toggle {
+/* ================= CAREERS ================= */
+.careers-link a {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ================= HAMBURGER ================= */
+.hamburger {
   display: none;
-  font-size: 1.5rem;
+  flex-direction: column;
+  gap: 4px;
   cursor: pointer;
 }
 
-/* Responsive styles */
+.hamburger span {
+  width: 22px;
+  height: 2px;
+  background: #ffffff;
+  transition: 0.3s ease;
+}
+
+/* Animate to X */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(4px, 4px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(4px, -4px);
+}
+
+/* ================= MOBILE ================= */
 @media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .logo img {
+  /* constrain inside the 60px navbar height */
+  height: 120px; /* adjust as necessary */
+  max-height: 100%;
+  width: auto;         /* preserve aspect ratio */
+  display: block;
+}
+
+
   .navbar-links {
     position: absolute;
-    top: 60px;
-    left: 0;
-    right: 0;
-    background: #004080;
+    top: 56px; /* matches navbar height */
+    right: 16px;
+
     flex-direction: column;
-    width: 100%;
-    padding: 20px;
+    align-items: stretch;
+
+    background: #1e293b;
+    padding: 10px;
+    width: 200px;
+
     display: none;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(53, 134, 255, 0.35);
   }
 
   .navbar-links.open {
     display: flex;
+    animation: slideDown 0.25s ease forwards;
   }
 
-  .menu-toggle {
-    display: block;
+  .navbar-links li a,
+  .navbar-links li button {
+    width: 100%;
+    text-align: left;
+    padding: 8px 12px;
+    
   }
+}
 
-  .navbar-container {
-    flex-wrap: nowrap;
+/* ================= ANIMATION ================= */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

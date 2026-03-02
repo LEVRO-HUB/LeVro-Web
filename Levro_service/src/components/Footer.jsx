@@ -1,7 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
 import "./Footer.css";
-import wave from "../assets/images/wave.png";
+import wave from "../assets/Images/wave.png";
+import logo from "../assets/Images/logo1.png"
 
 const Footer = () => {
   return (
@@ -21,17 +20,18 @@ const Footer = () => {
           <div className="footer-col footer-left">
             <h3>Company</h3>
             <ul>
-              <li><Link to="/about">About Us</Link></li>
-              <li><Link to="/services">Our Services</Link></li>
-              <li><Link to="/blog">Blog</Link></li>
-              <li><Link to="/contact">Contact Us</Link></li>
-              <li><Link to="/careers">Careers</Link></li>
+              <li><button onClick={() => handleScroll("home")}>Home</button></li>
+              <li><button onClick={() => handleScroll("services")}>Services</button></li>
+              <li><button onClick={() => handleScroll("about")}>About Us</button></li>
+              <li><button onClick={() => handleScroll("contact")}>Contact</button></li>
             </ul>
           </div>
 
           {/* Center: Icons */}
           <div className="footer-col footer-center">
-            <h3>LEVRO icon</h3>
+            <div className="logo">
+                <img src={logo} alt="Levrotec technologies Logo" />
+            </div>
             {/* <div className="social-icons">
               <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
               <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
@@ -44,10 +44,10 @@ const Footer = () => {
           <div className="footer-col footer-right">
             <h3>Address</h3>
             <ul>
-              <li>101 The Amazing Road</li>
-              <li>Premier Building</li>
-              <li>Manchester</li>
-              <li>400105</li>
+              <li>Vengaivasal Main Road</li>
+              <li>Gowriwakkam</li>
+              <li>Chennai,Tamil Nadu 600073</li>
+              <li>Tamilnadu ,IND</li>
             </ul>
           </div>
         </div>
