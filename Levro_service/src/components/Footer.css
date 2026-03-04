@@ -30,7 +30,10 @@ footer {
   flex: 1;
   min-width: 200px;
 }
-
+.footer-left{
+  font-size: large;
+  font-weight: 600;
+}
 /* ensure center column logo stays horizontally centered */
 .footer-center {
   display: flex;

@@ -4,7 +4,6 @@ import Home from './Pages/Home';
 import Service from './Pages/Service';
 
 import About from './Pages/About';
-import Careers from './Pages/Careers';
 import Footer from './components/Footer';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
@@ -21,18 +20,6 @@ function Mainpage() {
       <section id="about"><About /></section>
       <section id="contact"><ContactUs /></section>
     </>
-  //  // 
-  //  <Router>
-  //     <Navbar />
-  //     <Routes>
-  //       <Route path="/" element={<Home />} />
-  //       <Route path="/contact" element={<ContactUs />} />
-  //       <Route path="/about" element={<About />} />
-  //       <Route path="/services" element={<Service />} />
-  //       <Route path="/careers" element={<Careers />} />
-  //     </Routes>
-  //     <Footer />
-  //   </Router>
   );
 }
 function App() {
@@ -41,8 +28,7 @@ function App() {
       <ScrollToHash />
       <Navbar />
       <Routes>
-        <Route path="/" element={<MainPage />} />
-        <Route path="/careers" element={<Careers />} />
+        <Route path="/" element={<Mainpage />} />
       </Routes>
       <Footer />
     </Router>

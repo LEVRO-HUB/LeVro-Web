@@ -92,9 +92,9 @@ export default function Navbar() {
               Contact
             </button>
           </li>
-          <li className="careers-link">
+          {/* <li className="careers-link">
             <Link to="/careers">Careers</Link>
-          </li>
+          </li> */}
         </ul>
       </div>
     </nav>
