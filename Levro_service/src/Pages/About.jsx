@@ -162,7 +162,7 @@ export default function About() {
       <section className="cto-mini">
         <div className="cto-mini-card">
           <div className="cto-mini-avatar">
-            <img src={prem} alt="CTO" />
+            <img src={prem} alt="levrotec COO" />
           </div>
 
           <span className="cto-mini-label">Prem Rajeevan / COO</span>
@@ -333,10 +333,10 @@ export default function About() {
       <section className="cto-mini">
         <div className="cto-mini-card">
           <div className="cto-mini-avatar">
-            <img src={mathi} alt="CTO" />
+            <img src={mathi} alt="levrotec CMO" />
           </div>
 
-          <span className="cto-mini-label">Mathivanan / MD</span>
+          <span className="cto-mini-label">Mathivanan / CMO</span>
 
           <p>
             We didn’t start with everything figured out — just a clear purpose and the drive to build something meaningful.
