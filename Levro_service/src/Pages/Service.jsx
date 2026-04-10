@@ -155,7 +155,7 @@ function Service() {
       <section className="cto-mini">
         <div className="cto-mini-card">
           <div className="cto-mini-avatar">
-            <img src={sepal} alt="CTO" />
+            <img src={sepal} alt="levrotec CTO" />
           </div>
 
           <span className="cto-mini-label">Seepal Dharsan / CTO</span>

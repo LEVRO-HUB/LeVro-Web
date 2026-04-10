@@ -223,7 +223,7 @@ banner-tagline { font-size: clamp(0.9rem, 2.5vw, 1.2rem); line-height: 1.4; marg
 }
 /* Company info */
 .company-info {
-  padding-top: 80px;
+  padding-top: 20px;
   text-align: center;
 }
 
