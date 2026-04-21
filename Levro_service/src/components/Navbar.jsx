@@ -117,7 +117,7 @@ export default function Navbar() {
           <img 
             src={isDarkBg ? logo2 : logo} 
             alt="Levrotec Logo" 
-            className={`transition-all duration-500 ${isDarkBg ? "h-12 md:h-24" : "h-16 md:h-36"} w-auto object-contain`} 
+            className={`transition-all duration-500 h-28 md:h-36 w-auto object-contain`} 
           />
         </div>
 
