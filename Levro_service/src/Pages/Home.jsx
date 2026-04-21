@@ -1,63 +1,98 @@
 import tharun from "../assets/Images/Members/tharun.jpeg";
-import "./Home.css";
+import softwareMonolith from "../assets/Images/software_monolith.png";
 import { Helmet } from 'react-helmet';
+import { useReveal } from "../hooks/useReveal";
+import { useRef } from "react";
 
 const Home = () => {
+  const rootRef = useRef(null);
+  useReveal(rootRef);
   return (
-    <div>
+    <div className="bg-white font-sans text-slate-900 min-h-screen w-full relative overflow-hidden" ref={rootRef}>
       <Helmet>
-        <title>LEVROTEC Technologies | Web Development & SEO Optimization Services</title>
-        <meta name="description" content="Levrotec Technologies is a digital solutions company offering professional web development, SEO optimization, scalable backend systems, and custom web applications worldwide." />
-        <meta name="keywords" content="Levrotec Technologies, Web Development Services, SEO Optimization, Digital Solutions Company, Custom Web Applications" />
-        <meta name="author" content="Levrotec Technologies" />
-        <link rel="canonical" href="https://levrotec.com/" />
+        <title>Levrotec | Software Products, ERP Solutions &amp; IT Services</title>
+        <meta name="description" content="Levrotec is a leader in scalable ERP solutions and IT services. We build smart software products to help businesses grow faster and operate smarter." />
+        <meta name="keywords" content="software products, ERP solutions, IT services, Levrotec, Chennai IT company, enterprise software, custom software development" />
       </Helmet>
-      <section className="relative bg-linear-to-br from-slate-950 via-slate-900 to-slate-800 text-white flex items-center md:min-h-screen pt-0" >
 
-        <div className="max-w-7xl mx-auto px-6 py-16 md:py-24">
+      {/* Main Hero Section - monolith Layout */}
+      <section className="relative w-full max-w-7xl mx-auto px-6 md:px-12 pt-16 md:pt-32 pb-12 flex flex-col lg:flex-row items-center gap-10 mt-12">
 
-          {/* HERO CONTENT */}
-          <div className="max-w-3xl">
+        {/* Left Content */}
+        <div className="w-full lg:w-[60%] flex flex-col items-start z-10 relative">
 
-            {/* Premium Heading */}
-            <h1 className="hero-heading">
-              <span className="line-1">Custom Software &</span>
-              <span className="line-2">Enterprise IT Architectures</span>
-              <span className="line-3">for Modern Businesses</span>
+          <div className="text-sky-600 text-xs font-bold tracking-[0.3em] uppercase mb-8 flex items-center gap-2">
+            <span className="w-8 h-px bg-sky-500"></span>
+            SMART SOFTWARE PRODUCTS & ERP SOLUTIONS
+          </div>
+
+          <div className="flex flex-col mb-10">
+            <h1 className="text-3xl md:text-[54px] font-bold leading-tight tracking-tight text-slate-800">
+              Powering Business with
             </h1>
-
-            {/* CEO Mini Message */}
-            <div className="leader-note">
-              <div className="leader-avatar">
-                <img src={tharun} alt="levrotec CEO" />
-              </div>
-
-              <div className="leader-message">
-                <span className="leader-title">Tharun Devakumar / CEO</span>
-                <p>
-                  At Levro, we believe building scalable digital systems is the foundation for long-term business growth.
-                </p>
-              </div>
+            <div className="relative inline-block my-2">
+              <h1 className="text-5xl md:text-[110px] font-black leading-[0.8] tracking-tighter text-sky-500 uppercase">
+                INTELLIGENT
+              </h1>
             </div>
+            <h1 className="text-4xl md:text-[90px] font-black leading-[0.8] tracking-tighter text-slate-900 uppercase mt-4">
+              SOFTWARE PRODUCTS
+            </h1>
+          </div>
 
-            {/* Buttons */}
-            <div className="mt-8 flex flex-wrap gap-4">
-              <button className="bg-amber-500 hover:bg-amber-600 text-black font-semibold px-6 py-3 rounded-lg transition">
-                Get Started
-              </button>
+          <p className="text-slate-500 text-lg md:text-xl leading-relaxed max-w-[650px] mb-12 font-medium">
+            Levrotec delivers cutting-edge software products, ERP solutions, and IT services designed to streamline operations, boost productivity, and accelerate digital growth for businesses of all sizes.
+          </p>
 
-              <button className="border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-black px-6 py-3 rounded-lg transition">
-                View Services
-              </button>
-            </div>
-
+          <div className="flex flex-wrap items-center gap-6 md:gap-10">
+            <button 
+              onClick={() => document.getElementById('platforms')?.scrollIntoView({ behavior: 'smooth' })}
+              className="w-full sm:w-auto bg-sky-500 hover:bg-sky-600 text-white font-black uppercase text-[12px] tracking-[0.2em] px-10 py-5 rounded-sm transition-all shadow-xl shadow-sky-500/20 active:scale-95"
+            >
+              EXPLORE OUR PRODUCTS
+            </button>
+            <button 
+              onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+              className="hidden md:flex items-center gap-3 text-slate-800 font-black uppercase text-[12px] tracking-[0.2em] group"
+            >
+              OUR SERVICES →
+            </button>
           </div>
         </div>
 
-        {/* Soft Glow Background */}
-        <div className="absolute top-40 right-10 w-72 h-72 bg-blue-500/20 rounded-full blur-[120px] -z-10"></div>
+        {/* Right - Abstract Monolith Visual */}
+        <div className="w-full lg:w-[35%] relative flex justify-center lg:justify-end">
+          {/* Background glow to soften the white base */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] bg-sky-50 blur-[120px] rounded-full pointer-events-none -z-10"></div>
+
+          <div className="w-full relative reveal-section group">
+            <img
+              src={softwareMonolith}
+              alt="Software Architecture Monolith"
+              className="w-full h-auto object-contain transform lg:scale-105 transition-transform duration-1000 group-hover:scale-100 drop-shadow-2xl"
+            />
+          </div>
+        </div>
 
       </section>
+
+      {/* Leadership Section (CEO) */}
+      <section className="py-4 px-6 md:px-12 relative z-10 flex justify-center">
+        <div className="w-full max-w-2xl p-0.5 bg-gradient-to-r from-sky-200 via-slate-100 to-transparent rounded-[24px]">
+          <div className="bg-white/90 backdrop-blur-xl p-4 md:p-6 rounded-[22px] flex flex-col md:flex-row items-center gap-6 shadow-sm">
+            <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-sky-500/30 shrink-0 shadow-md">
+              <img src={tharun} alt="Tharun Devakumar - Chief Executive Officer (CEO) of Levrotec Technologies, Chennai" className="w-full h-full object-cover" />
+            </div>
+            <div className="text-center md:text-left">
+              <p className="text-base md:text-lg italic font-light text-slate-700 mb-3 leading-relaxed">
+                "At Levrotec, we believe building <span className="text-sky-500 font-bold not-italic underline decoration-sky-200 underline-offset-8">scalable digital systems</span> is the foundation for long-term business growth."
+              </p>
+              <div className="text-[9px] font-bold tracking-[0.2em] uppercase text-slate-400 font-sans">Tharun Devakumar / CEO / Levrotec Core</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 };

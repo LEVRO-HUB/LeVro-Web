@@ -1,349 +1,216 @@
-import { useEffect, useState } from "react";
-import "./About.css";
-
-import hero1 from "../assets/Images/hero1.avif";
-import hero2 from "../assets/Images/hero2.avif";
-
+﻿import { useEffect, useState, useRef } from "react";
+import { gsap } from "gsap";
+import { Helmet } from 'react-helmet';
 import prem from "../assets/Images/Members/prem.jpeg";
 import mathi from "../assets/Images/Members/mathi.png";
-
-import cube from "../assets/Images/about_shapes/cube.png";
-import triangle from "../assets/Images/about_shapes/triangle.png";
-import spring from "../assets/Images/about_shapes/spring.png";
-import hook from "../assets/Images/about_shapes/hook.png";
-
 import story1 from "../assets/Images/story1.avif";
 import story2 from "../assets/Images/story2.avif";
 import story3 from "../assets/Images/story3.avif";
+import { useReveal } from "../hooks/useReveal";
 
-import clock from "../assets/Images/about_icons/clockicon.svg"; //
-import right from "../assets/Images/about_icons/righticon.svg"; 
-import office from "../assets/Images/about_icons/officeicon.svg"; 
-import smile from "../assets/Images/about_icons/smileicon.svg"; 
-import user from "../assets/Images/about_icons/Usericon.svg";
-import top from "../assets/Images/about_icons/topicon.svg"; 
-
-
-export default function About() {
-
-  /* ---------- DATA FIRST ---------- */
-  const STORY_CONTENT = [
-    {
-      quote: "Your growth is our success — we don’t just build solutions, we build lasting partnerships.",
-      steps: [
-        { no: "01", title: "Growing Together With Purpose", text: "At Levro Technologies, we believe growth is never one-sided. When you grow, we grow. Every project we take on is more than just development work — it’s a partnership built on trust, clarity, and long-term vision." },
-        { no: "02", title: "Built on Understanding and Trust", text: "We started with a simple belief: businesses deserve digital solutions that truly support their goals. Too often, companies struggle with complex systems, poor communication, and services that feel disconnected from their real needs. We chose a different path — one focused on understanding first, building thoughtfully, and delivering consistently." },
-        { no: "03", title: "Digital Solutions That Drive Real Results", text: "From web development and SEO optimization to scalable backend systems and custom applications, our mission is to create digital platforms that help you get noticed, generate leads, and build lasting impact." }
-      ]
-    }
-  ];
-  const prevStory = () => {
-    setImageIndex((i) => (i - 1 + STORY_IMAGES.length) % STORY_IMAGES.length);
-    setStepIndex((i) => (i - 1 + STORY_STEPS.length) % STORY_STEPS.length);
-  };
-  const nextStory = () => {
-    setImageIndex((i) => (i + 1) % STORY_IMAGES.length);
-    setStepIndex((i) => (i + 1) % STORY_STEPS.length);
-  };
-
-
-  /* ---------- DERIVED CONSTANTS ---------- */
-  const STORY_STEPS = STORY_CONTENT[0].steps;
-  const STORY_IMAGES = [story1, story2, story3];
-
-  /* ---------- STATE ---------- */
+const About = () => {
+  const rootRef = useRef(null);
   const [imageIndex, setImageIndex] = useState(0);
-  const [stepIndex, setStepIndex] = useState(0);
+  const STORY_IMAGES = [story1, story2, story3];
+  useReveal(rootRef);
 
-  /* ---------------- Story slide ---------------- */
   useEffect(() => {
     const timer = setInterval(() => {
       setImageIndex((i) => (i + 1) % STORY_IMAGES.length);
-      setStepIndex((i) => (i + 1) % STORY_STEPS.length);
-    }, 6000);
-
+    }, 5000);
     return () => clearInterval(timer);
   }, []);
 
-
-  /* ---------------- SCROLL ANIMATION ---------------- */
   useEffect(() => {
-    const items = document.querySelectorAll(".fade-up");
+    const sections = document.querySelectorAll(".reveal-section");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          gsap.fromTo(entry.target,
+            { opacity: 0, y: 30 },
+            { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }
+          );
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
-
-    items.forEach((el) => observer.observe(el));
+    sections.forEach((section) => observer.observe(section));
     return () => observer.disconnect();
   }, []);
 
   return (
-    <div className="about-page">
+    <div className="bg-white font-sans text-slate-900 min-h-screen w-full relative overflow-hidden" ref={rootRef}>
+      <Helmet>
+        <title>About Levrotec | Leadership Team – CEO Tharun Devakumar, CTO Seepal Dharshan, COO Prem Rajeevan, CMO Mathivanan, CFO Hariharan </title>
+        <meta name="description" content="Meet the Levrotec leadership team — CEO Tharun Devakumar, CMO Mathivanan, CTO Seepal Dharshan, COO Prem Rajeevan, and CFO Hariharan. Chennai-based IT company building smart software products and ERP solutions." />
+        <meta name="keywords" content="Levrotec team, Tharun Devakumar CEO Levrotec, Seepal Dharshan CTO Levrotec, Prem Rajeevan COO Levrotec, Mathivanan CMO Levrotec, Hariharan CFO Levrotec, Levrotec leadership, Chennai IT company founders" />
+      </Helmet>
 
-      {/* ================= HERO ================= */}
-      <section className="about-hero">
-        <div className="about-hero-container">
+      {/* Hero Section */}
+      <section className="relative pt-12 pb-12 px-6 md:px-12 max-w-7xl mx-auto overflow-hidden">
+        {/* Soft background accents */}
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-sky-50 blur-[120px] rounded-full pointer-events-none -z-10"></div>
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-indigo-50 blur-[100px] rounded-full pointer-events-none -z-10"></div>
 
-          {/* LEFT CONTENT */}
-        <div className="about-hero-left exact-left">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center reveal-section">
+          <div>
+            <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-sky-50 border border-sky-100 text-sky-600 text-[9px] font-bold tracking-[0.2em] uppercase mb-6">
+              WHO WE ARE
+            </div>
+            <h1 className="text-3xl md:text-7xl font-black mb-8 leading-[1.1] tracking-tighter uppercase text-slate-800">
+              The <span className="text-sky-500">Levrotec</span> <br />Story
+            </h1>
+            <p className="text-slate-600 text-lg leading-relaxed mb-10 font-medium max-w-xl">
+              Levrotec is a Chennai-based product-driven IT company on a mission to build smart, scalable software that solves real business and educational challenges. Founded with a vision to make technology more meaningful, we develop powerful software products, ERP solutions, IT services, and custom software — all engineered to deliver real results. Our flagship product, Zaptude, is already transforming how institutes conduct exams and analyze student performance across India.
+            </p>
 
-          <div className="story-label">
-            <span className="bar"></span>
-            <span className="text">Levrotec Technologies</span>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 md:gap-8 py-8 border-y border-slate-100">
+              <div>
+                <div className="text-2xl md:text-3xl font-black text-slate-900 mb-1">1</div>
+                <div className="text-[8px] md:text-[9px] text-slate-400 uppercase tracking-widest font-bold">Flagship Product</div>
+              </div>
+              <div>
+                <div className="text-2xl md:text-3xl font-black text-slate-900 mb-1">3+</div>
+                <div className="text-[8px] md:text-[9px] text-slate-400 uppercase tracking-widest font-bold">Service Verticals</div>
+              </div>
+              <div>
+                <div className="text-2xl md:text-3xl font-black text-slate-900 mb-1">100%</div>
+                <div className="text-[8px] md:text-[9px] text-slate-400 uppercase tracking-widest font-bold">Product-First</div>
+              </div>
+              <div>
+                <div className="text-2xl md:text-3xl font-black text-slate-900 mb-1">∞</div>
+                <div className="text-[8px] md:text-[9px] text-slate-400 uppercase tracking-widest font-bold">Innovation</div>
+              </div>
+            </div>
           </div>
 
-          <h1 className="hero-title">
-            <span>About Levrotec Technologies </span>
-            <span className="accent">
-              Digital Solutions &<br />Web Development Experts
-            </span>
-          </h1>
-
-          <p className="hero-sub">
-            Levro Technologies is a results-driven digital solutions company specializing in web development, SEO optimization, 
-            and scalable web applications for businesses worldwide. We help brands design, build, and grow high-performance digital platforms that generate measurable results.
-          </p>
-
-        </div>
-
-          {/* RIGHT CONTENT */}
-          <div className="about-hero-right">
-
-            {/* IMAGE CARDS */}
-            <div className="hero-cards">
-              <div className="hero-card">
-                <span className="chip">Tech Blog</span>
-                <img src={hero1} alt="blog" />
-              </div>
-
-              <div className="hero-card">
-                <span className="chip">Trends</span>
-                <img src={hero2} alt="trends" />
+          <div className="relative group">
+            <div className="absolute inset-0 bg-sky-400/5 rounded-3xl blur-3xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div className="relative aspect-video rounded-3xl overflow-hidden border border-slate-100 shadow-2xl shadow-slate-200/50">
+              <img src={story1} alt="foundation" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <div className="absolute inset-0 bg-gradient-to-t from-white/20 via-transparent to-transparent"></div>
+              <div className="absolute bottom-6 left-6">
+                <div className="flex gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-sky-500 animate-pulse"></div>
+                  <span className="text-[10px] font-mono text-sky-600 uppercase tracking-[0.3em] font-bold">Operational_Node_Alpha</span>
+                </div>
               </div>
             </div>
-
-            {/* STATS */}
-            <div className="hero-stats">
-              <div>
-                <strong>100+</strong>
-                <span>Projects</span>
-              </div>
-              <div>
-                <strong>250+</strong>
-                <span>Customers</span>
-              </div>
-              <div>
-                <strong>2+</strong>
-                <span>Years</span>
-              </div>
-              <div>
-                <strong>50+</strong>
-                <span>Members</span>
-              </div>
-            </div>
-
-            {/* CTA */}
-            <div className="hero-intro">
-              <button className="watch-btn">▶ Watch Intro</button>
-            </div>
-
           </div>
         </div>
       </section>
 
-      <section className="cto-mini">
-        <div className="cto-mini-card">
-          <div className="cto-mini-avatar">
-            <img src={prem} alt="levrotec COO" />
-          </div>
-
-          <span className="cto-mini-label">Prem Rajeevan / COO</span>
-
-          <p>
-            Strategy isn’t just planning — it’s disciplined execution that drives real growth.
-          </p>
-
-        </div>
-      </section>
-
-      {/* ================= WHO WE ARE ================= */}
-      <section className="strategy-section fade-up">
-          <div className="strategy-container">
-
-            <div className="strategy-header">
-              <span className="strategy-tag">OUR PORTFOLIO</span>
-              <h2>
-                Thoughtful Digital <span>Strategies</span>
-              </h2>
+      {/* Leadership 1 (COO) */}
+      <section className="py-8 px-6 md:px-12 reveal-section flex justify-center">
+        <div className="w-full max-w-2xl p-0.5 bg-gradient-to-r from-sky-200 via-slate-100 to-transparent rounded-[24px]">
+          <div className="bg-white/90 backdrop-blur-xl p-4 md:p-6 rounded-[22px] flex flex-col md:flex-row items-center gap-6 shadow-sm">
+            <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-sky-500/30 shrink-0 shadow-md">
+              <img src={prem} alt="Prem Rajeevan - Chief Operating Officer (COO) of Levrotec Technologies" className="w-full h-full object-cover" />
             </div>
-
-            <div className="strategy-cards">
-
-              <div className="strategy-card primary">
-                <div className="icon-wrap">
-                  <img src={triangle} alt="Resolution" />
-                </div>
-                <small>RESOLUTION</small>
-                <p>Our Experts Deliver All Solutions</p>
-              </div>
-
-              <div className="strategy-card">
-                <div className="icon-wrap">
-                  <img src={cube} alt="Reputable" />
-                </div>
-                <small>REPUTABLE</small>
-                <p>Develop, Engross & Fulfill Service</p>
-              </div>
-
-              <div className="strategy-card">
-              <div className="icon-wrap">
-                <img src={hook} alt="Assistance" />
-              </div>
-                <small>ASSISTANCE</small>
-                <p>24/7 Instantaneous Customer Service</p>
-              </div>
-
-              <div className="strategy-card">
-                <div className="icon-wrap">
-                  <img src={spring} alt="Reach" />
-                </div>
-                <small>REACH</small>
-                <p>Conveniently Reachable Globally</p>
-              </div>
-
-            </div>
-          </div>
-        </section>
-
-      {/* ================= WHY LEVRO ================= */}
-      <section className="why-section fade-up">
-        <h2>Strategic Digital Solutions by<span className="highlight"> Levro Technologies</span></h2>
-        <div className="why-grid">
-
-          <div className="why-item">
-            <div className="why-icon"><img src={right} className="why-icon" alt="Easy setup" /></div>
-            <h4>FAST & EFFICIENT PROJECT ONBOARDING</h4>
-            <p>Our structured onboarding process ensures rapid project setup, streamlined planning, and efficient execution for web development and SEO projects.</p>
-          </div>
-
-          <div className="why-item">
-            <div className="why-icon"><img src={user} className="why-icon" alt="Easy setup" /></div>
-            <h4>SCALABLE DIGITAL ARCHITECTURE</h4>
-            <p>We build scalable web applications and backend systems designed to grow with your business and support increasing traffic and operational demands.</p>
-          </div>
-
-          <div className="why-item">
-            <div className="why-icon"><img src={top} className="why-icon" alt="Easy setup" /></div>
-            <h4>EXPERIENCED WEB & SEO SPECIALISTS</h4>
-            <p>Our team of skilled developers and SEO strategists brings industry expertise in building high-performance websites and data-driven digital growth strategies.</p>
-          </div>
-
-          <div className="why-item">
-            <div className="why-icon"><img src={clock} className="why-icon" alt="Easy setup" /></div>
-            <h4>SEAMLESS GLOBAL COLLABORATION</h4>
-            <p>We work with international clients across multiple time zones, ensuring transparent communication and consistent project updates.</p>
-          </div>
-
-          <div className="why-item">
-            <div className="why-icon"><img src={office} className="why-icon" alt="Easy setup" /></div>
-            <h4>ENTERPRISE-GRADE INFRASTRUCTURE</h4>
-            <p>Our development environment includes secure hosting, optimized servers, cloud integration, and performance monitoring for reliable digital solutions.</p>
-          </div>
-
-          <div className="why-item">
-            <div className="why-icon"><img src={smile} className="why-icon" alt="Easy setup" /></div>
-            <h4>CLIENT-CENTRIC DEVELOPMENT APPROACH</h4>
-            <p>We align with your business goals and brand values to deliver custom digital solutions that reflect your vision and market positioning.</p>
-          </div>
-
-        </div>
-      </section>
-  
-      {/* ================= OUR STORY ================= */}
-      <section
-        id="our-story"
-        className="page-section story-section fade-up"
-      >
-        <div className="story-glass">
-
-          {/* LEFT */}
-          <div className="story-left">
-            <div className="story-image">
-
-              {/* MINI CHIPS */}
-              <div className="story-chips">
-                <span className="chip">Planning</span>
-                <span className="chip">Design</span>
-                <span className="chip">Sprint</span>
-              </div>
-
-              <img src={STORY_IMAGES[imageIndex]} alt="" />
-
-              <div className="story-nav">
-                <button onClick={prevStory}>‹</button>
-                <button onClick={nextStory}>›</button>
-              </div>
-            </div>
-          </div>
-
-          {/* RIGHT */}
-          <div className="story-right">
-            <h2 className="story-heading">OUR STORY</h2>
-
-            {/* QUOTE CARD */}
-            <div className="story-quote-card">
-              <span className="quote-mark">“</span>
-              <p>{STORY_CONTENT[0].quote}</p>
-            </div>
-
-            {/* MAIN GLASS CARD */}
-            <div className="story-glass-card">
-              <p>
-                Your success is our success. That’s why we focus on long-term collaboration, scalable solutions, and performance-driven results. Whether you are launching a startup or expanding an established brand, we stand beside you as a trusted digital partner.
+            <div className="text-center md:text-left">
+              <p className="text-base md:text-lg italic font-light text-slate-700 mb-3 leading-relaxed">
+                "Strategy isn’t just planning — it’s <span className="text-sky-500 font-bold not-italic underline decoration-sky-200 underline-offset-8">disciplined execution</span> that drives real, scalable growth in a digital-first economy."
               </p>
+              <div className="text-[9px] font-bold tracking-[0.2em] uppercase text-slate-400">Prem Rajeevan / COO / Levrotec Core</div>
             </div>
-
-            {/* STEP CARD */}
-            <div className="story-step-card" key={stepIndex}>
-              <span className="step-no">{STORY_STEPS[stepIndex].no}</span>
-
-              <div>
-                <strong>{STORY_STEPS[stepIndex].title}</strong>
-                <p>{STORY_STEPS[stepIndex].text}</p>
-              </div>
-            </div>
-
-            {/* CTA */}
-            <div className="story-cta-card">
-              <span>Want a product that feels premium?</span>
-              <button className="story-outline-btn">Talk to Us</button>
-            </div>
-
           </div>
         </div>
       </section>
-      <section className="cto-mini">
-        <div className="cto-mini-card">
-          <div className="cto-mini-avatar">
-            <img src={mathi} alt="levrotec CMO" />
+
+      {/* Values Grid */}
+      <section className="py-12 px-6 md:px-12 max-w-7xl mx-auto reveal-section hidden md:block">
+        <div className="text-center mb-20">
+          <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter mb-6 text-slate-800 text-center">Designed for <span className="text-sky-500">Impact</span></h2>
+          <div className="w-24 h-1.5 bg-sky-500 mx-auto rounded-full"></div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[
+            { title: "INNOVATIVE", text: "We don't follow trends — we build them. Levrotec creates software products from the ground up, designed to solve problems that matter and deliver value from day one.", icon: "⚡", color: "text-sky-500", bg: "bg-sky-50" },
+            { title: "REPUTABLE", text: "Built on transparency, honest delivery, and client trust. At Levrotec, every commitment we make is one we keep — from project timelines to product quality.", icon: "💎", color: "text-indigo-500", bg: "bg-indigo-50" },
+            { title: "SECURE", text: "Security is not an afterthought at Levrotec. Every product and solution we build follows industry-standard security practices — keeping your data and your users always protected.", icon: "🛡️", color: "text-violet-500", bg: "bg-violet-50" },
+            { title: "END-TO-END SOLUTIONS", text: "From custom software development to ERP implementation and IT consulting — Levrotec is your single technology partner for building, scaling, and managing your digital ecosystem.", icon: "🏗️", color: "text-sky-500", bg: "bg-sky-50" },
+            { title: "RESULTS-DRIVEN", text: "We measure our success by yours. Every solution Levrotec delivers is focused on generating measurable outcomes — better efficiency, smarter decisions, and real business growth.", icon: "🎯", color: "text-indigo-500", bg: "bg-indigo-50" },
+            { title: "DEDICATED SUPPORT", text: "We're not just a vendor — we're your technology partner. Levrotec stays with you beyond delivery, offering hands-on support, training, and continuous improvements to everything we build.", icon: "🤝", color: "text-violet-500", bg: "bg-violet-50" },
+          ].map((val, i) => (
+            <div key={i} className="group p-8 bg-white border border-slate-100 rounded-[32px] transition-all hover:bg-slate-50/50 hover:border-sky-200 hover:shadow-xl hover:shadow-slate-200/50 h-full flex flex-col">
+              <div className={`w-12 h-12 ${val.bg} rounded-xl flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform shadow-sm flex-shrink-0`}>{val.icon}</div>
+              <h3 className={`text-xl font-black uppercase mb-3 tracking-tight text-slate-800 group-hover:${val.color} transition-colors`}>{val.title}</h3>
+              <p className="text-slate-500 text-sm leading-relaxed font-medium mb-4">{val.text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Story Slider Section */}
+      <section className="py-16 bg-slate-50 relative reveal-section">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="relative aspect-square rounded-[40px] overflow-hidden border border-white shadow-2xl shadow-slate-300/50">
+            <img src={STORY_IMAGES[imageIndex]} alt="story" className="w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-sky-500/5 mix-blend-overlay"></div>
+            <div className="absolute bottom-8 left-8 right-8 p-6 bg-white/90 backdrop-blur-md rounded-2xl border border-slate-100 shadow-xl">
+              <div className="text-[10px] font-bold text-sky-600 uppercase tracking-widest mb-2">Internal Log: History</div>
+              <div className="text-slate-800 font-bold text-sm leading-relaxed">"Your growth is our success — we don’t just build solutions, we build lasting partnerships."</div>
+            </div>
           </div>
 
-          <span className="cto-mini-label">Mathivanan / CMO</span>
+          <div className="space-y-12">
+            <div>
+              <h2 className="text-sm font-bold text-sky-600 uppercase tracking-[0.4em] mb-6">Our Evolution</h2>
+              <div className="space-y-10">
+                <div className="flex gap-6">
+                  <div className="text-2xl font-black text-sky-200 group-hover:text-sky-500 transition-colors">01</div>
+                  <div>
+                    <h4 className="text-xl font-black uppercase mb-2 text-slate-800">Growing with Purpose</h4>
+                    <p className="text-slate-500 text-sm leading-relaxed font-medium">Partnerships built on trust, clarity, and long-term vision. Every project is a step towards a bigger future.</p>
+                  </div>
+                </div>
+                <div className="flex gap-6">
+                  <div className="text-2xl font-black text-sky-200">02</div>
+                  <div>
+                    <h4 className="text-xl font-black uppercase mb-2 text-slate-800">Built on Understanding</h4>
+                    <p className="text-slate-500 text-sm leading-relaxed font-medium">We choose a path focused on understanding first, building thoughtfully, and delivering consistently.</p>
+                  </div>
+                </div>
+                <div className="flex gap-6">
+                  <div className="text-2xl font-black text-sky-200">03</div>
+                  <div>
+                    <h4 className="text-xl font-black uppercase mb-2 text-slate-800">Proven Results</h4>
+                    <p className="text-slate-500 text-sm leading-relaxed font-medium">From web architecture to AI optimization, our mission is to drive real-world impact for your brand.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-          <p>
-            We didn’t start with everything figured out — just a clear purpose and the drive to build something meaningful.
-          </p>
+            <button
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              className="px-10 py-5 bg-sky-500 text-white font-bold uppercase text-[11px] tracking-widest rounded-full transition-all hover:bg-sky-600 shadow-lg shadow-sky-500/20 active:scale-95"
+            >
+              Connect With Us
+            </button>
+          </div>
+        </div>
+      </section>
 
+      {/* Leadership 2 (CMO) */}
+      <section className="py-8 px-6 md:px-12 reveal-section flex justify-center">
+        <div className="w-full max-w-2xl p-0.5 bg-gradient-to-r from-indigo-200 via-slate-100 to-transparent rounded-[24px]">
+          <div className="bg-white/90 backdrop-blur-xl p-4 md:p-6 rounded-[22px] flex flex-col md:flex-row items-center gap-6 shadow-sm transition-all hover:shadow-2xl">
+            <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-indigo-500/30 shrink-0 shadow-lg">
+              <img src={mathi} alt="Mathivanan - Chief Marketing Officer (CMO) of Levrotec Technologies" className="w-full h-full object-cover" />
+            </div>
+            <div className="text-center md:text-left">
+              <p className="text-base md:text-lg italic font-light text-slate-700 mb-3 leading-relaxed">
+                "We didn’t start with everything figured out — just a <span className="text-slate-900 font-black not-italic px-2 py-1 bg-indigo-50 rounded-lg">clear purpose</span> and the drive to build something meaningful."
+              </p>
+              <div className="text-[9px] font-bold tracking-[0.3em] uppercase text-indigo-500">Mathivanan / CMO / Levrotec Intelligence</div>
+            </div>
+          </div>
         </div>
       </section>
     </div>
   );
-}
+};
+
+export default About;
