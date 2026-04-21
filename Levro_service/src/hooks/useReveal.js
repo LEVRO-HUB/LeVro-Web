@@ -14,7 +14,7 @@ export const useReveal = (containerRef) => {
     if (elements.length === 0) return;
 
     // Set initial state via GSAP
-    gsap.set(elements, { opacity: 0, filter: "blur(15px)", y: 40 });
+    gsap.set(elements, { opacity: 0, y: 40 });
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -22,13 +22,12 @@ export const useReveal = (containerRef) => {
           if (entry.isIntersecting) {
             gsap.to(entry.target, {
               opacity: 1,
-              filter: "blur(0px)",
               y: 0,
               duration: 0.8,
               ease: "power2.out",
               onComplete: () => {
                 // Remove inline styles to allow CSS-based interactions if any
-                gsap.set(entry.target, { clearProps: "filter,opacity,transform" });
+                gsap.set(entry.target, { clearProps: "opacity,transform" });
               }
             });
             observer.unobserve(entry.target);
