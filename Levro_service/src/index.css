@@ -1,34 +1,57 @@
 @import "tailwindcss";
-/* body {
-  margin: 0;
-  font-family: Arial, sans-serif;
+
+@layer base {
+  html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white text-slate-900;
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  * {
+    box-sizing: border-box;
+  }
 }
 
-.hero {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-} */
-
-/* .logo {
-  width: 120px;
-  margin-bottom: 20px;
-} */
-
-/* h1 {
-  font-size: 48px;
-  font-weight: bold;
+/* Custom Scrollbar for Light Mode */
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-h1 span {
-  color: #8b1e1e;
-} */
-/* 
-p {
-  max-width: 600px;
-  color: #555;
-  font-size: 18px;
-} */
+::-webkit-scrollbar-track {
+  @apply bg-slate-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 rounded-full hover:bg-slate-400 transition-colors;
+}
+
+/* Hide Google Translate Widget */
+#google_translate_element,
+.goog-te-banner-frame,
+.goog-te-gadget-icon,
+.goog-te-menu-value span:nth-child(2),
+.goog-te-gadget-simple img,
+.goog-te-gadget-simple div {
+  display: none !important;
+}
+
+.goog-te-gadget-simple {
+  background-color: transparent !important;
+  border: none !important;
+}
+
+body {
+  top: 0 !important;
+}
+
+.skiptranslate {
+  display: none !important;
+}
