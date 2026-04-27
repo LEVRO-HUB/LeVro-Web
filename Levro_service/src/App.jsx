@@ -6,7 +6,7 @@ import Platforms from './Pages/Platforms';
 import About from './Pages/About';
 import Services from './Pages/Services';
 import Footer from './components/Footer';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import ScrollIndicator from './components/ScrollIndicator';
 import ScrollToHash from "./components/ScrollToHash";
@@ -74,6 +74,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Mainpage />} />
+        {/* Redirect unknown routes (like /careers) to home */}
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
       <Footer />
     </Router>

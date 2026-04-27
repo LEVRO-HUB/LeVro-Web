@@ -1,4 +1,4 @@
-import tharun from "../assets/Images/Members/tharun.jpeg";
+﻿import tharun from "../assets/Images/Members/tharun.jpeg";
 import softwareMonolith from "../assets/Images/software_monolith.png";
 import { Helmet } from 'react-helmet';
 import { useReveal } from "../hooks/useReveal";
@@ -45,13 +45,13 @@ const Home = () => {
           </p>
 
           <div className="flex flex-wrap items-center gap-6 md:gap-10">
-            <button 
+            <button
               onClick={() => document.getElementById('platforms')?.scrollIntoView({ behavior: 'smooth' })}
               className="w-full sm:w-auto bg-sky-500 hover:bg-sky-600 text-white font-black uppercase text-[12px] tracking-[0.2em] px-10 py-5 rounded-sm transition-all shadow-xl shadow-sky-500/20 active:scale-95"
             >
               EXPLORE OUR PRODUCTS
             </button>
-            <button 
+            <button
               onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
               className="hidden md:flex items-center gap-3 text-slate-800 font-black uppercase text-[12px] tracking-[0.2em] group"
             >
@@ -85,7 +85,7 @@ const Home = () => {
             </div>
             <div className="text-center md:text-left">
               <p className="text-base md:text-lg italic font-light text-slate-700 mb-3 leading-relaxed">
-                "At Levrotec, we believe building <span className="text-sky-500 font-bold not-italic underline decoration-sky-200 underline-offset-8">scalable digital systems</span> is the foundation for long-term business growth."
+                "At Levrotec, <span className="text-sky-500 font-bold not-italic underline decoration-sky-200 underline-offset-8"> we build software</span> that simplifies complexity and delivers real outcomes."
               </p>
               <div className="text-[9px] font-bold tracking-[0.2em] uppercase text-slate-400 font-sans">Tharun Devakumar / CEO / Levrotec Core</div>
             </div>
