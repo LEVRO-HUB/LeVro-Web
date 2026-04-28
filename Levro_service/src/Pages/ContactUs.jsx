@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { Helmet } from 'react-helmet';
-import hari from "../assets/Images/Members/hari.png";
+import hari from "../assets/Images/Members/hari.jpeg";
 import facebook from "../assets/Images/facebook.png";
 import { useReveal } from "../hooks/useReveal";
 
